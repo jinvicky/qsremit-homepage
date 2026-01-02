@@ -1,0 +1,406 @@
+//
+// home.scss
+//
+@mixin home-common {
+    background-size: cover !important;
+    align-self: center;
+    position: relative;
+    background-position: center center;
+}
+
+.bg-home {
+    height: 100vh;    
+    @include home-common();
+}
+.bg-half-260 {
+    padding: 260px 0;    
+    @include home-common();
+}
+.bg-half-170 {
+    padding: 170px 0;    
+    @include home-common();
+    &.half-home {
+        padding: 180px 0 105px;
+    }
+}
+.bg-half {
+    padding: 300px 0 170px;
+    @include home-common();
+}
+
+.user-pages {
+    padding: 117px 0;
+    @include home-common();
+}
+
+.bg-animation-left {
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 70%;
+        height: 100%;
+        background: rgba($white, 0.85);
+        clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+    }
+    &.ani-travel {
+        &:after {
+            width: 100%;
+            clip-path: circle(75% at 0% 50%);
+            background: $white;     
+        }
+    }
+    &.dark-left {
+        &:after {
+            background: rgba($dark, 0.6);
+        }
+    }
+    &.half-home {
+        &:after {
+            background: lighten($gray-200, 2%);
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+        }
+    }
+}
+
+.social-media-wrapper {
+    background: $light;
+    overflow: hidden;
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 15rem;
+        right: 12rem;
+        width: 60rem;
+        height: 35rem;
+        transform: rotate(75deg);
+        background: linear-gradient(90deg, $white, transparent);
+        z-index: 1;
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            right: -10rem;
+        }
+        
+        @media (min-width: 200px) and (max-width: 768px) {
+            right: -10rem;
+            height: 25rem;
+            bottom: 25rem;
+        }
+    }
+}
+
+// Overview Index
+.overview-home {
+    background: url("../images/index/bg.png") repeat 0 0;
+    animation: animate-left-to-right 60s linear infinite;
+}
+@keyframes animate-left-to-right { 
+    from { 
+        background-position: 0 0; 
+    } 
+    to { 
+        background-position: 100% 0; 
+    } 
+}
+
+//Job Landing
+.form-inline {
+    .icons {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 18px;
+    } 
+}
+//swiper slider
+.swiper-slider-hero {
+    .swiper-slide .slide-inner {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        top: 98%;
+        background: transparent;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin-top: -30px;
+        &:before {
+            font-family: "Material Design Icons";
+            font-weight: 900;
+            color: $white;
+        }
+        &:hover {
+            background: $primary;
+            border-color: $primary !important;
+        }
+        .swiper-navigation-icon {
+            display: none !important;
+        }
+    }
+    .swiper-button-prev {
+        left: 10px;
+        border: 1px solid rgba($white, 0.5);
+        &:before {
+            content: "\f0141";
+        }
+    }
+    .swiper-button-next {
+        right: 10px;
+        border: 1px solid rgba($white, 0.5);
+        &:before {
+            content: "\f0142";
+        }
+    }
+    .swiper-button-next, 
+    .swiper-rtl .swiper-button-prev,
+    .swiper-button-prev, 
+    .swiper-rtl .swiper-button-next {
+        &:after {
+            display: none;
+        }
+    }
+    .swiper-pagination-bullet {
+        color: $gray-100;
+        background: transparent;
+    }
+    .swiper-pagination-bullet-active {
+        color: $white;
+    }
+    .swiper-container-horizontal 
+    > .swiper-pagination-bullets,
+    .swiper-pagination-custom, 
+    .swiper-pagination-fraction {
+        bottom: 45px;
+    }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-horizontal.swiper-pagination-bullets {
+    .swiper-pagination-bullet {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .swiper-slider-hero .swiper-container .swiper-slide {        
+        padding: 150px 0;
+        height: auto;
+    } 
+}
+
+//Digital Marketing
+.bg-digital-marketing {
+    background: radial-gradient(circle at 80% 50%, rgba($dark, 0.05) 0%, 
+                                                   rgba($dark, 0.05) 33.333%,
+                                                   rgba($gray-400, 0.1) 33.333%, 
+                                                   rgba($gray-400, 0.1) 66.666%,
+                                                   rgba($gray-700, 0.1) 66.666%, 
+                                                   rgba($gray-700, 0.1) 99.999%),
+                linear-gradient(45deg, $primary, $blue);
+    .digital-hero {
+        border-bottom-right-radius: 30% !important;
+    }
+    .play-icon {
+        bottom: 44px;
+        right: 0px;
+        left: auto;
+    }
+}
+
+//Online Learning Courses
+.online-course-bg, .job-home-hero, .comingsoon {
+    .container-fluid {
+        .padding-less {
+            &.img {
+                background: scroll center no-repeat;
+                background-size: cover;
+                position: absolute;
+                height: 100%;
+                
+            }
+        }
+    }
+}
+
+.online-course-bg {
+    .container-fluid {
+        .padding-less {
+            &.img {
+                border-radius: 0 0 80px 0;
+            }
+        }
+    }
+}
+.job-home-hero {
+    .container-fluid {
+        .padding-less {
+            &.img {
+                border-radius: 80px 0 0 80px;
+            }
+        }
+        .job-hero-content {
+            z-index: 1;
+        }
+    }
+}
+
+//Charity & Helping Hands
+.main-slider {
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 30px;
+        border: 1px solid $gray-400;
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 30%;
+    }
+}
+.bg-animation-left {
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 70%;
+        height: 100%;
+        background: rgba($white, 0.85);
+        clip-path: polygon(0 0, 90% 0, 70% 100%, 0% 100%);
+    }
+    &.dark-left {
+        &:after {
+            background: rgba($dark, 0.6);
+        }
+    }
+}
+
+
+// Responsive css
+@media (min-width: 768px) {
+    .attach-icons-hero {
+        position: absolute;
+        right: 0;
+        top: -35px;
+        left: 0;
+        z-index: 1;
+    }
+}
+@media (max-width: 768px) {
+    .bg-animation-left {
+        &.ani-travel {
+            &:after {
+                clip-path: circle(65% at 0% 50%);
+            }
+        }
+    }
+
+    //Online Learning Courses
+    .online-course-bg, .job-home-hero, .comingsoon {
+        .hero-img {
+            height: auto !important;
+            align-items: start !important;
+        }
+        .hero-my-60 {
+            margin: 60px 0;
+        }
+        .padding-less {
+            position: relative !important;
+            height: 400px !important;
+        } 
+    }
+}
+@media (max-width: 767px) {
+    .bg-home, 
+    .bg-half-170, 
+    .bg-half-260,
+    .swiper-slider-hero .swiper-container .swiper-slide,
+    .main-slider .slides .bg-slider,
+    .user-pages {        
+        padding: 150px 0;
+        height: auto !important;
+    } 
+    .bg-half {
+        padding: 195px 0 120px;
+    }
+    .bg-animation-left {
+        &.half-home {
+            &:after {
+                background: none !important;
+            }
+        }
+    }
+    .online-hero-img {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .attach-icons-hero {
+        border-bottom: 1px solid $gray-200;
+    }
+    // .dashboard-shape-two { 
+    //     &:before {
+    //         bottom: -5rem;
+    //         right: -10rem;
+    //         width: 30rem;
+    //         height: 24rem;
+    //         border-radius: 8rem;
+    //     } 
+    // }
+    .app-image-fluid {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .bg-animation-left {
+        &.ani-travel {
+            &:after {
+                clip-path: circle(85% at 50% 0%);
+                background: rgba($white, 0.9);
+            }
+        }
+    }
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+    .registration-form-box {
+        margin-bottom: 10px;
+    }
+}
+
+.home-dashboard {
+    img {
+        position: relative;
+        top: 60px;
+        z-index: 1;
+    }
+}
+
+// .dashboard-shape-two {
+//     &:before {
+//         content: "";
+//         position: absolute;
+//         bottom: 5rem;
+//         right: -35rem;
+//         width: 70rem;
+//         height: 50rem;
+//         z-index: -1;
+//         background-color: $blue;
+//         border-radius: 30rem;
+//         transform: rotate(-45deg);
+//         opacity: 0.8;
+//     }
+// }

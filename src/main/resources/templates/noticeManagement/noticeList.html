@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content"
+     th:replace="~{contents/noticeManagement/contentNoticeList.html}">
+</div>
+
+<th:block layout:fragment="add_js">
+    <script src="/js/noticeManagement/noticeList.js"></script>
+</th:block>
+
+</html>

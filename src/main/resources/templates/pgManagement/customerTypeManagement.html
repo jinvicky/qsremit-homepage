@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content" th:replace="~{contents/pgManagement/contentCustomerTypeManagement.html}">
+</div>
+
+<th:block layout:fragment="add_js">
+  <!-- Dashboard init-->
+  <script src="/nnp/js/pgManagement/customerTypeManagement.js"></script>
+</th:block>
+
+</html>

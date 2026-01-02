@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">QSREMIT</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <th:block layout:fragment="css"></th:block>
+</head>
+<body>
+<div id="__next">
+  <header th:replace="~{fragments/header :: header}"></header>
+
+  <div layout:fragment="content"></div>
+
+  <footer th:replace="~{fragments/footer :: footer}"></footer>
+</div>
+<script src="/js/main.js"></script>
+<th:block layout:fragment="scripts"></th:block>
+</body>
+</html>

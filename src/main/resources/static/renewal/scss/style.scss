@@ -1,0 +1,49 @@
+/* Template Name: Incrave - Creative Landing Page Template
+   Author: Shreethemes
+   E-mail: shreethemes@gmail.com
+   Created: August 2019
+   Version: 1.1.0
+   Updated: November 2021
+   File Description: Main Css file of the template
+*/
+/*********************************/
+/*         INDEX                 */
+/*================================
+ *     01.  Variables            *
+ *     02.  Bootstrap Custom     *
+ *     03.  Components           *
+ *     04.  General              *
+ *     05.  Helper               *
+ *     06.  Menu                 *
+ *     07.  Home / Landing       *
+ *     08.  Features / Services  *
+ *     09.  C.T.A                *
+ *     10.  Team                 *
+ *     11.  Testimonial          *
+ *     12.  Pricing              *
+ *     13.  Work / Portfolio     *
+ *     14.  Blog / News          *
+ *     15.  Countdown            *
+ *     16.  Contact              *
+ *     17.  Footer               *
+ *     18.  Switcher             *
+ ================================*/
+
+@import "variables";
+@import "bootstrap-custom";
+@import "components";
+@import "general";
+@import "helper";
+@import "menu";
+@import "home";
+@import "feature";
+@import "cta";
+@import "team";
+@import "testi";
+@import "price";
+@import "work";
+@import "blog";
+@import "countdown";
+@import "contact";
+@import "footer";
+@import "switcher";

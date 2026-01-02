@@ -1,0 +1,199 @@
+<div class="left-side-menu" xmlns:sec="http://www.w3.org/1999/xhtml">
+	<!-- LOGO -->
+	<div class="logo-box">
+		<a th:href="${#authorization.expression('hasRole(''EC'')') ? '/pgManagement/accountDepositManagement' : ''}" class="logo logo-light text-center">
+			<span class="logo-sm"> <img src="/nnp/images/qsLogo.svg" alt="" height="24"></span>
+			<span class="logo-lg"> <img src="/nnp/images/qsLogo.svg" alt="" height="60"></span>
+		</a>
+	</div>
+	<div class="h-100" data-simplebar>
+		<!-- User box -->
+		<!-- Sidebar User Info Option -->
+		<!-- <div th:replace="~{fragments/sidebarUserInfoOption}"></div> -->	
+		<!--- Sidemenu -->
+		<div id="sidebar-menu">
+			<ul id="side-menu">
+				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')">
+					<a href="/dashboard">
+						<i class="ri-dashboard-line"></i><span>Dashboard </span>
+					</a>
+				</li>
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')">-->
+<!--					<a href="/partnerManagement">-->
+<!--						<i class="ri-dashboard-line"></i><span>Partner Management </span>-->
+<!--					</a>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('AGENT')">-->
+<!--					<a href="/">-->
+<!--						<i class="ri-dashboard-line"></i><span> Home </span>-->
+<!--					</a>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')">-->
+<!--					<a href="#fxRateManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="fxRateManagement">-->
+<!--						<i class="ri-exchange-line"></i><span> FX Rate Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="fxRateManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--&lt;!&ndash;							<li><a href="/fxRateManagement/fxRateManagementSetup">FX Rate Setup</a></li>&ndash;&gt;-->
+<!--							<li><a href="/fxRateManagement/fxRateManagementEdit?mode=partner&remitterId=1">FX Rate Setting</a></li>-->
+<!--							<li><a href="/fxRateManagement/fxRateManagementHistory">FX Rate History</a></li>-->
+<!--							<li class="d-none"><a href="/fxRateManagement/fxRateManagementEdit"></a></li>-->
+<!--							<li class="d-none"><a href="/fxRateManagement/fxRateManagementAddCurrency"></a></li>-->
+<!--							<li class="d-none"><a href="/fxRateManagement/fxRateManagementAddRate"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')">-->
+<!--					<a href="#serviceChargeManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="serviceChargeManagement">-->
+<!--						<i class="ri-money-dollar-circle-line"></i><span> Service Charge Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="serviceChargeManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--&lt;!&ndash;							<li><a href="/serviceChargeManagement/serviceChargeManagementSetup">Service Charge Setup</a></li>&ndash;&gt;-->
+<!--							<li><a href="/serviceChargeManagement/serviceChargeManagementEdit?remitterId=1">Service Charge Setting</a></li>-->
+<!--						&lt;!&ndash; 2차 개발-->
+<!--							<li><a href="/serviceChargeManagement/serviceChargeManagementHistory">Service Charge History</a></li> &ndash;&gt;-->
+<!--							<li class="d-none"><a href="/serviceChargeManagement/serviceChargeManagementEdit"></a></li>-->
+<!--							<li class="d-none"><a href="/serviceChargeManagement/serviceChargeManagementCreate"></a></li>-->
+<!--							<li class="d-none"><a href="/serviceChargeManagement/serviceChargeManagementEditDetail"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT', 'AGENT')">-->
+<!--					<a href="#customerManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="customerManagement">-->
+<!--						<i class="ri-user-line"></i><span> Customer Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="customerManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/customer/customerSearch">Customer Search</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/customer/customerLawsonAccount">Lawson Account</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN',  'SUPER_AGENT')"><a href="/customer/expiredManage">Expired Management</a></li>-->
+<!--							&lt;!&ndash;/customer/customerPointManage&ndash;&gt;-->
+<!--&lt;!&ndash;							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="#"> 🔨 Point Manage</a></li>&ndash;&gt;-->
+<!--							<li class="d-none"><a href="/customer/newCustomer"></a></li>-->
+<!--							<li class="d-none"><a href="/customer/customerDetail"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT', 'AGENT')">-->
+<!--					<a href="#transationManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="transationManagement">-->
+<!--						<i class="ri-exchange-dollar-line"></i><span> Transaction Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="transationManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/transaction/transactionOutboundHistory">Outbound History</a></li>-->
+<!--							&lt;!&ndash;/transaction/transactionInboundHistory&ndash;&gt;-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/transaction/transactionInboundHistory">Inbound History</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/transaction/transactionDepositBranchManager">Deposit Branch Manager</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/transaction/transactionSubsidiaryInformation">Subsidiary Information</a></li>-->
+<!--							<li class="d-none"><a href="/transaction/transactionOutboundHistoryDetail"></a></li>-->
+<!--							<li class="d-none"><a href="/transaction/transactionOutboundHistorySend"></a></li>-->
+<!--							<li class="d-none"><a href="/transaction/transactionInboundHistoryDetail"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')">-->
+<!--					<a href="#userManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="userManagement">-->
+<!--						<i class="ri-admin-line"></i><span> User Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="userManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/user/userList">User Management</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_AGENT')"><a href="/user/loginHistory">Login History</a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')"><a href="/user/userLogHistory">User Log History</a></li>-->
+<!--							<li class="d-none"><a href="/user/userCreateAgent"></a></li>-->
+<!--							<li class="d-none"><a href="/user/userEditAgent"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')">-->
+<!--					<a href="#settlementReport" data-bs-toggle="collapse" aria-expanded="false" aria-controls="settlementReport">-->
+<!--						<i class="ri-file-line"></i><span> Settlement Report </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="settlementReport">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/settlementReport/settlementReportOutbound">Outbound Settlement Report</a></li>-->
+<!--							&lt;!&ndash; /settlementReport/settlementReportInbound &ndash;&gt;-->
+<!--&lt;!&ndash;							<li><a href="#"> 🔨 Inbound Settlement Report</a></li>&ndash;&gt;-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')">-->
+<!--					<a href="#strManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="strManagement">-->
+<!--						<i class="ri-table-line"></i><span> STR Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="strManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/str/strManagement">STR Management</a></li>-->
+<!--							<li class="d-none"><a href="/str/strManagementDetail"></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')">-->
+<!--					<a href="#bankDeposit" data-bs-toggle="collapse" aria-expanded="false" aria-controls="bankDeposit">-->
+<!--						<i class="ri-bank-line"></i> <span> Bank Deposit History </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="bankDeposit">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/bankDeposit/bankDepositHistory"> Bank Deposit History </a></li>-->
+<!--							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="/bankDeposit/bankTypeManagement"> Bank Type Management </a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+<!--				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN')">-->
+<!--					<a href="#amlManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="amlManagement">-->
+<!--						<i class="ri-shield-user-line"></i><span> AML Management </span> <span class="menu-arrow"></span>-->
+<!--					</a>-->
+<!--					<div class="collapse" id="amlManagement">-->
+<!--						<ul class="nav-second-level">-->
+<!--							<li><a href="/amlManagement/amlManagementUpload"> AML Management Upload </a></li>-->
+<!--							<li><a href="/amlManagement/amlManagementCheck"> AML Check</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</li>-->
+				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')">
+					<a href="#noticeManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="noticeManagement">
+						<i class="ri-notification-line"></i><span>Notice Management </span> <span class="menu-arrow"></span>
+					</a>
+					<div class="collapse" id="noticeManagement">
+						<ul class="nav-second-level">
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'REMIT_ADMIN', 'SUPER_AGENT')"><a href="/noticeManagement/noticeManagement">Notice Management </a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li>
+					<a href="#notice" data-bs-toggle="collapse" aria-expanded="false" aria-controls="notice">
+						<i class="ri-notification-2-line"></i><span>Notice</span> <span class="menu-arrow"></span>
+					</a>
+					<div class="collapse" id="notice">
+						<ul class="nav-second-level">
+							<li><a href="/noticeManagement/noticeViewList">Notice</a></li>
+						</ul>
+					</div>
+				</li>
+
+				<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'EC', 'EC_ADMIN')">
+					<a href="#pgManagement" data-bs-toggle="collapse" aria-expanded="false" aria-controls="pgManagement">
+						<i class="ri-money-dollar-box-line"></i><span>PG Management </span> <span class="menu-arrow"></span>
+					</a>
+					<div class="collapse" id="pgManagement">
+						<ul class="nav-second-level">
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'EC_ADMIN', 'EC')"><a href="/pgManagement/accountDepositManagement">Account Deposit Management </a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="/pgManagement/customerTypeManagement">Customer Type Management </a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="/pgManagement/ECCustomerManagement">EC Customer Management </a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="/pgManagement/bankDepositManagement">Bank Deposit Management </a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'EC_ADMIN')"><a href="/pgManagement/dailySummaryManagement">Daily Summary Management</a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN')"><a href="/pgManagement/monthlyReportManagement">Report Management</a></li>
+							<li sec:authorize="hasAnyRole('SUPER_ADMIN', 'ADMIN', 'EC_ADMIN')"><a href="/pgManagement/monthlyReportSearchManagement">Report Search Management</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="/profileSettings"><i class="ri-user-settings-line"></i><span>Profile Settings </span></a></li>
+			</ul>
+		</div>
+		<!-- End Sidebar -->
+		<div class="clearfix"></div>
+	</div>
+	<!-- Sidebar -left -->
+</div>

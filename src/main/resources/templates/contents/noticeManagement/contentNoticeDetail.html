@@ -1,0 +1,107 @@
+<div class="content-page" xmlns:sec="http://www.w3.org/1999/xhtml">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+      <!-- 페이지 타이틀 -->
+      <div th:replace="~{fragments/title}"></div>
+
+      <!-- 메인 콘텐츠 행 -->
+      <div class="row">
+          <!-- 이슈 본문 카드 -->
+          <div class="card mb-3">
+            <div class="card-body">
+              <form data-parsley-validate class="form-horizontal" role="form">
+                <div class="row mb-3">
+                  <div class="col-md-6 ">
+                    <label class="form-label">Writer</label>
+                    <span id="writer" class="m-1"></span>
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                      <div class="col-md-6">
+                  </div>
+                    <div sec:authorize="hasAnyRole('SUPER_ADMIN')" class="col-md-6">
+                        <label class="form-label">Assignee</label>
+                        <select class="form-select" id="assigneeSelect">
+                            <option value="">Select assignee</option>
+                            <option th:each="user : ${users}" th:value="${user}" th:text="${user}"></option>
+                        </select>
+                    </div>
+                </div>
+                  <!-- 첫 번째 줄: Title, Priority -->
+                  <div class="row mb-3">
+                      <div class="col-md-6">
+                          <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                          <input type="text"
+                                 parsley-trigger="change" required
+                                 class="form-control"
+                                 id="title"
+                                 name="searchText"
+                                 placeholder="1-50 characters only"
+                                 maxlength="50">
+                      </div>
+                      <div class="row mb-3">
+                          <div class="col-md-6">
+                              <label class="form-label">Thumbnail Image</label>
+                              <input type="file" class="form-control" id="thumbnail" name="thumbnail" accept="image/*" />
+
+                              <!-- AJAX로 동적으로 삽입할 영역 -->
+                              <div id="currentThumbnailPreview" class="mt-2"></div>
+                          </div>
+                      </div>
+                </div>
+                <div class="row mb-3">
+                </div>
+                <div id="noticeEditorContainer">
+                  <div id="noticeEditor" style="height: 500px;"></div>
+                  <input type="text" style="display: none" id="hiddenContent" required parsley-trigger="change">
+                  <input type="text" style="display: none" name="content" id="hiddenImageData" required parsley-trigger="change">
+                </div>
+                <div class="text-center pt-2">
+                  <a href="/noticeManagement/noticeManagement" class="btn btn-outline-primary width-xl">Cancel</a>
+                  <button type="submit" class="btn btn-primary width-xl">Save</button>
+                  <button type="button" id="deleteBtn" class="btn btn-danger width-xl ms-2">Delete</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+      <!-- end row -->
+
+      <!-- file preview template -->
+      <div class="d-none" id="uploadPreviewTemplate">
+        <div class="card mb-2 shadow-none border">
+          <div class="p-2">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <img data-dz-thumbnail src="#" class="avatar-sm rounded bg-light" alt="">
+              </div>
+              <div class="col ps-0">
+                <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>
+                <p class="mb-0" data-dz-size></p>
+              </div>
+              <div class="col-auto">
+                <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>
+                  <i class="fe-x"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- container-fluid -->
+  </div> <!-- content -->
+</div>
+
+<!-- Start Filter -->
+<!-- pending -->
+<div class="row">
+  <div class="col-xl-3 col-md-6">
+    <!-- End Table Card / 이슈 모달 영역 -->
+    <div th:replace="~{contents/noticeManagement/modalNoticeImageViewer.html}"></div>
+  </div>
+  <!-- content -->
+  <!-- Footer Start -->
+  <div th:replace="~{fragments/footer}"></div>
+  <!-- end Footer -->
+</div>

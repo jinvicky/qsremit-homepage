@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title layout:title-pattern="$CONTENT_TITLE - Terms - QSREMIT">QSREMIT</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/terms.css" />
+</head>
+<body>
+<div id="__next">
+  <div th:replace="${'fragments/' + lang + '/header'} :: header"></div>
+
+  <!-- Terms 전용 영역 -->
+  <div class="relative py-16 bg-white overflow-hidden">
+
+    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+      <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+        <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+          <defs>
+            <pattern id="pattern-01" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+            </pattern>
+          </defs>
+          <rect width="404" height="384" fill="url(#pattern-01)"></rect>
+        </svg>
+
+        <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+          <defs>
+            <pattern id="pattern-02" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+            </pattern>
+          </defs>
+          <rect width="404" height="384" fill="url(#pattern-02)"></rect>
+        </svg>
+      </div>
+    </div>
+
+    <div class="relative px-4 sm:px-6 lg:px-8">
+      <div class="text-lg max-w-prose mx-auto">
+        <div layout:fragment="terms-content">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer th:replace="${'fragments/' + lang + '/footer'} :: footer"></footer>
+</div>
+<script src="/js/main.js"></script>
+<script src="/js/terms.js"></script>
+</body>
+</html>

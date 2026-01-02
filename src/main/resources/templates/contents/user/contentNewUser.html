@@ -1,0 +1,162 @@
+<div class="content-page">
+	<div class="content">
+		<!-- Start Content-->
+		<div class="container-fluid">
+			<!-- start page title -->
+			<div th:replace="~{fragments/title}"></div>
+			<!-- end page title -->
+			<div class="card">
+				<div class="card-body">
+					<div class="mb-2 row d-flex align-items-center">
+						<label class="col-md-2 col-form-label" for="registrationDate">Registration
+							Date</label>
+						<div id="registrationDate" class="col-md-4"></div>
+					</div>
+					<form id="newUserForm" th:action="@{/user/newUser}"
+						th:object="${form}" method="post" data-parsley-validate
+						class="form-horizontal" role="form">
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="type">
+								User Type<span class="text-danger">*</span>
+							</label>
+							<div class="col-md-6 show-error-message">
+								<select th:field="*{userType}" parsley-trigger="change" required
+									class="form-select">
+									<option value="">Select</option>
+									<option value="ADMIN">Admin</option>
+									<option value="REMIT_ADMIN">Remit Admin</option>
+									<option value="SUPER_AGENT">Super Agent</option>
+									<option value="AGENT">Agent</option>
+									<option value="EC">EC</option>
+									<option value="EC_ADMIN">EC Admin</option>
+								</select>
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="userId">
+								User ID<span class="text-danger">*</span>
+							</label>
+							<div class="col-md-6 show-error-message">
+								<div class="input-group">
+									<div class="col-md-8">
+										<input th:field="*{userId}" parsley-trigger="keyup" required
+											data-parsley-minlength="4"
+											data-parsley-pattern="^[a-zA-Z0-9]+$" type="text"
+											class="form-control">
+									</div>
+									<div class="col-md-4">
+										<button type="button" id="userIdCheckAvailability" class="btn btn-secondary w-100">Check Availability</button>
+									</div>
+								</div>
+								<ul>
+									<li>At least 4 characters in length.</li>
+									<li>Contain both alphabetic and numeric characters</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="password">
+								User Password<span class="text-danger">*</span>
+							</label>
+							<div class="col-md-6 show-error-message">
+								<input th:field="*{password}" parsley-trigger="keyup" required
+									data-parsley-minlength="14"
+									data-parsley-pattern='^(?=.*[!@#$%^&*(),.?:{}|<>])(?=.*\d).*$'
+									data-parsley-custom type="password" class="form-control"
+								    data-parsley-required-message="Password is required."
+								    data-parsley-pattern-message="Password must include at least one number and one special character."
+									data-parsley-minlength-message="Password must be at least 14 characters long."
+								    data-parsley-custom-message="Password must not contain 3 or more consecutive numbers.">
+								<ul>
+									<li>At least 14 characters in length.</li>
+									<li>Contain at least one numeric character.</li>
+									<li>Contain at least one special character (e.g. !@#$%^&*).</li>
+									<li>Not contain more than 3 consecutive number. (eg.123)</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="confirmPassword">
+								User Confirm Password<span class="text-danger">*</span>
+							</label>
+							<div class="col-md-6 d-flex">
+								<div class="col-md-12 show-error-message">
+									<input type="password" class="form-control"
+										data-parsley-equalto="#password" parsley-trigger="keyup"
+									    data-parsley-required-message="Please confirm your password."
+									    data-parsley-equalto-message="Passwords do not match."
+										required id="confirmPassword">
+								</div>
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="email">
+								User Email<span class="text-danger">*</span>
+							</label>
+							<div class="col-md-6">
+								<div class="input-group">
+									<div class="col-md-8">
+										<input required th:field="*{email}" type="text" class="form-control" parsley-trigger="keyup" data-parsley-type="email">
+									</div>
+									<div class="col-md-4">
+										<button type="button" id="emailCheckAvailability" class="btn btn-secondary w-100">Check Availability</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="name">
+								User Name
+							</label>
+							<div class="col-md-6">
+								<input th:field="*{name}" type="text" class="form-control">
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="mobile">User
+								Phone</label>
+							<div class="col-md-6">
+								<input th:field="*{mobile}"
+								   type="text"
+								   class="form-control"
+								   data-parsley-type="digits"
+								   data-parsley-pattern="^\d+$"
+								   data-parsley-trigger="keyup">
+							</div>
+						</div>
+						<div class="mb-2 row">
+							<label class="col-md-2 col-form-label" for="transacionReport">Transaction
+								Report</label>
+							<div class="col-md-6">
+								<div class="d-flex align-items-center">
+									<input th:field="*{transactionReport}" type="checkbox"
+									   id="transactionReport"
+									   disabled="true"
+									   class="form-check-input"
+										value="true">
+										<p class="mb-0">If you check, the report will be sent to your email
+										daily.</p>
+								</div>
+								<p class="transaction-report-error-message text-danger p-1"></p>
+							</div>
+
+						</div>
+						<div class="text-center pt-5">
+							<a href="/user/userList?mode=agent" type="button"
+								class="btn btn-outline-primary width-xl">Cancel</a>
+							<button type="submit" class="btn btn-primary width-xl">Save</button>
+						</div>
+					</form>
+					<p th:text="${errorMessage}" class="text-center text-danger"></p>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+		<!-- Footer Start -->
+		<div th:replace="~{fragments/footer}"></div>
+		<!-- end Footer -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Page content -->
+	<!-- ============================================================== -->
+</div>

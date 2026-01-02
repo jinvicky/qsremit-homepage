@@ -1,0 +1,112 @@
+<div class="content-page" xmlns:sec="http://www.w3.org/1999/xhtml">
+	<div class="content">
+		<!-- Start Content-->
+		<div class="container-fluid">
+			<!-- start page title -->
+			<div th:replace="~{fragments/title}"></div>
+			<!-- end page title -->
+			<div class="card">
+				<div class="card-body">
+					<div class="mb-2 row d-flex align-items-center">
+                       <label class="col-md-2 col-form-label" for="registrationDate">Registration Date</label>
+                       <div th:text="${registerDate}" class="col-md-4"></div>
+                   	</div>
+					<form id="editUserForm" th:action="@{/user/editUser(id=${id})}" th:object="${form}" method="post" class="form-horizontal" role="form">
+                        <input th:field="*{id}" hidden="hidden" disabled type="text">
+                        <div sec:authorize="hasAnyRole('SUPER_ADMIN')" class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="userType">User Type<span class="text-danger">*</span></label>
+                            <div class="col-md-6">
+                                <input th:field="*{userType}" readOnly type="text" class="form-control border-0 px-0 d-none" >
+                                <select class="form-select" id="selectUserType" name="selectUserType">
+                                    <option value="">Select</option>
+                                    <option value="SUPER_ADMIN">Super Admin</option>
+                                    <option value="ADMIN">Admin</option>
+                                    <option value="REMIT_ADMIN">Remit Admin</option>
+                                    <option value="SUPER_AGENT">Super Agent</option>
+                                    <option value="AGENT">Agent</option>
+                                    <option value="EC">EC</option>
+                                    <option value="EC_ADMIN">EC Admin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div sec:authorize="hasAnyRole('ADMIN', 'SUPER_AGENT', 'AGENT')" class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="userType">User Type<span class="text-danger">*</span></label>
+                            <div class="col-md-6">
+                           	 	<input th:field="*{userType}" readOnly type="text" class="form-control border-0 px-0" >
+                            </div>
+                        </div>
+						<div class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="userId">User ID<span class="text-danger">*</span></label>
+                            <div class="col-md-6">
+                                <input th:field="*{userId}" readOnly type="text" class="form-control border-0 px-0 ps-sm-2" >
+                            </div>
+                        </div>
+						<div class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="password">User Password<span class="text-danger">*</span></label>
+                            <div class="col-md-6">
+                                <input th:field="*{password}" hidden="hidden" type="password" class="form-control">
+                                <input th:field="*{currentPassword}" hidden="hidden" type="password" class="form-control">
+                                <button type="button" class="btn btn-soft-secondary" data-bs-toggle="modal" data-bs-target="#con-close-modal">Change Password</button>
+                            </div>
+                        </div>
+                        <div class="mb-2 row">
+                          <label class="col-md-2 col-form-label" for="name">User Name</label>
+                          <div class="col-md-6">
+                              <input th:field="*{name}" type="text" class="form-control" >
+                          </div>
+                  	    </div>
+                        <div class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="email">User Email</label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <div class="col-md-8">
+                                        <input required th:field="*{email}" type="text" class="form-control" parsley-trigger="keyup" data-parsley-type="email">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" id="emailCheckAvailability" class="btn btn-secondary w-100">Check Availability</button>
+                                    </div>
+                                </div>
+                            </div>
+                   		</div>
+                        <div class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="mobile">User Phone</label>
+                            <div class="col-md-6">
+                                <input th:field="*{mobile}"
+                                   type="text"
+                                   class="form-control"
+                                   data-parsley-type="digits"
+                                   data-parsley-pattern="^\d+$"
+                                   data-parsley-trigger="keyup">
+                            </div>
+                   		</div>
+                        <div class="mb-2 row">
+                            <label class="col-md-2 col-form-label" for="transacionReport">Transaction Report</label>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <input th:field="*{transactionReport}" type="checkbox"
+                                           id="transactionReport"
+                                           class="form-check-input" value="true">
+                                    <p class="mb-0">If you check, the report will be sent to your email
+                                        daily.</p>
+                                </div>
+                                <p class="transaction-report-error-message text-danger p-1"></p>
+                            </div>
+                   		</div>
+                  		<div class="text-center pt-5">
+                        	<a href="/user/userList?mode=agent" type="button" class="btn btn-outline-primary width-xl">Cancel</a>
+                        	<button type="submit" class="btn btn-primary width-xl">Save</button>
+                        </div>
+					</form>
+					<div th:replace="~{contents/user/modalEditUserChangePassword.html}"></div>
+				</div>
+			</div>
+		</div>
+		<!-- content -->
+		<!-- Footer Start -->
+		<div th:replace="~{fragments/footer}"></div>
+		<!-- end Footer -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Page content -->
+	<!-- ============================================================== -->
+</div>

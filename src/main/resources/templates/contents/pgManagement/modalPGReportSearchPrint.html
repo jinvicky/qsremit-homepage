@@ -1,0 +1,233 @@
+<div id="printOptionsModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Report Preview</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="print-content m-5">
+        <!-- 모달 body -->
+        <div class="a4 print-preview">
+          <div class="print-header mb-3">
+            <div class="print-header-content">
+              <div class="text-center p-3 mb-4" style="background-color: #247ea8">
+                <span class="h1" style="color: white">R E C E I P T</span>
+              </div>
+              <span class="h3 ms-1" id="receipt_companyName">御中</span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column align-items-end mb-3">
+            <table class="print-table w-50">
+              <tr>
+                <th>No</th>
+                <td id="receipt_no" class="text-end"></td>
+              </tr>
+              <tr>
+                <th>発行日</th>
+                <td id="receipt_printDate" class="text-end"></td>
+              </tr>
+              <tr>
+                <th>取引期間</th>
+                <td id="receipt_period" class="text-end"></td>
+              </tr>
+            </table>
+            <div class="d-flex flex-column text-end">
+              <div class="d-flex align-items-center justify-content-end mb-2">
+                <span class="h3">N&P JAPAN Co., Ltd.</span>
+                <img src="/nnp/images/japanSeal.jpg" alt="Company Logo"
+                     style="max-height:70px; object-fit:contain;">
+              </div>
+              <span>Kaneko Heights 2F, 2-20-2 Hyakunin-cho, Shinjuku-ku</span>
+              <span>Tokyo-to, 169-0073, JAPAN</span>
+              <span>TEL: 81-3-6302-1223</span>
+              <span>FAX: 81-3-6302-1224</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="mt-4 mb-3">
+              <span>下記、正に領収いたしました。</span>
+            </div>
+            <table class="print-table w-50">
+              <tr>
+                <th class="h3 text-center" style="background-color: #247ea8; color: white">合計</th>
+                <td id="receipt_total" class="h3 text-center"></td>
+              </tr>
+              </tr>
+            </table>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <table class="print-table">
+                <thead>
+                <tr>
+                  <th class="text-center" style="background-color: #247ea8; color: white">日付</th>
+<!--                  <th class="text-center" style="background-color: #247ea8; color: white"></th>-->
+<!--                  <th class="text-center" style="background-color: #247ea8; color: white"></th>-->
+<!--                  <th class="text-center" style="background-color: #247ea8; color: white"></th>-->
+                  <th class="text-center" style="background-color: #247ea8; color: white">件数(件)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">入金金額(円)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">手数料(円)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">支払金額(円)</th>
+                </tr>
+                </thead>
+                <tbody id="receipt_transactionBody">
+                </tbody>
+                <tfoot>
+                <tr class="table-secondary" style="background-color: #bdbdbd;">
+                  <td class="fw-bold text-center">合計</td>
+<!--                  <td></td>-->
+<!--                  <td></td>-->
+<!--                  <td></td>-->
+                  <td id="receipt_totalCount" class="text-center"></td>
+                  <td id="receipt_totalAmount" class="text-center"></td>
+                  <td id="receipt_totalFee" class="text-center"></td>
+                  <td id="receipt_totalPayment" class="text-center"></td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+<!--          <div>-->
+<!--            <table class="print-table" id="receipt_memo_table">-->
+<!--              <tr>-->
+<!--                <th class="h3 text-center" style="background-color: #247ea8; color: white">備考</th>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <td class="h3 text-center"><input type="text" id="receipt_memo" class="form-control border-0 w-100 fs-5" value="" placeholder="Input note here"/></td>-->
+<!--              </tr>-->
+<!--            </table>-->
+<!--          </div>-->
+        </div>
+
+        <!---------------------------- 페이지 구분 ---------------------------->
+        <div class="mb-5"></div>
+        <!---------------------------- 페이지 구분 ---------------------------->
+
+        <div class="a4 print-preview">
+          <div class="print-header mb-3">
+            <div class="print-header-content">
+              <div class="text-center p-3 mb-4" style="background-color: #247ea8">
+                <span class="h1" style="color: white">取 引 内 訳</span>
+              </div>
+              <span class="h3 ms-1" id="trans_companyName">御中</span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column align-items-end mb-3">
+            <table class="print-table w-50">
+              <tr>
+                <th>No</th>
+                <td id="trans_no" class="text-end"></td>
+              </tr>
+              <tr>
+                <th>発行日</th>
+                <td id="trans_printDate" class="text-end"></td>
+              </tr>
+              <tr>
+                <th>取引期間</th>
+                <td id="trans_period" class="text-end"></td>
+              </tr>
+            </table>
+            <div class="d-flex flex-column text-end">
+              <div class="d-flex align-items-center justify-content-end mb-2">
+                <span class="h3">N&P JAPAN Co., Ltd.</span>
+                <img src="/nnp/images/japanSeal.jpg" alt="Company Logo"
+                     style="max-height:70px; object-fit:contain;">
+              </div>
+              <span>Kaneko Heights 2F, 2-20-2 Hyakunin-cho, Shinjuku-ku</span>
+              <span>Tokyo-to, 169-0073, JAPAN</span>
+              <span>TEL: 81-3-6302-1223</span>
+              <span>FAX: 81-3-6302-1224</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <table class="print-table">
+                <thead>
+                <tr>
+                  <th class="text-center" style="background-color: #247ea8; color: white">日 付</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">売上(JPY)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">手数料(JPY)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">決済金額(JPY)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">返金金額(JPY)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">入金日</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">入金レート</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">入金額(KRW)</th>
+                  <th class="text-center" style="background-color: #247ea8; color: white">累計額(KRW)</th>
+                </tr>
+                </thead>
+                <tbody id="trans_transactionBody">
+                </tbody>
+                <tfoot>
+                <tr class="table-secondary" style="background-color: #bdbdbd;">
+                  <td class="fw-bold text-center">合計額</td>
+                  <td id="trans_totalAmount" class="text-center"></td>
+                  <td id="trans_totalFee" class="text-center"></td>
+                  <td id="trans_totalPayment" class="text-center"></td>
+                  <td id="trans_totalRefund" class="text-center" style="color: red;"></td>
+                  <td></td>
+                  <td></td>
+                  <td id="trans_totalSettlementPayment" class="text-center"></td>
+                  <td id="trans_totalSettlementPaymentSum" class="text-center"></td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column align-items-end">
+            <table class="print-table w-50">
+              <tr>
+                <th class="text-end" style="background-color: #cfe2f3;">売上合計額(JPY)</th>
+                <td id="trans_finalTotalAmount" class="text-end"></td>
+              </tr>
+              <tr>
+                <th class="text-end" style="background-color: #cfe2f3;">手数料合計額(JPY)</th>
+                <td id="trans_finalTotalFee" class="text-end"></td>
+              </tr>
+              <tr>
+                <th class="text-end" style="background-color: #cfe2f3;">決済金合計額(JPY)</th>
+                <td id="trans_finalTotalPayment" class="text-end"></td>
+              </tr>
+              <tr>
+                <th class="text-end" style="background-color: #cfe2f3;">入金合計額(KRW)</th>
+                <td id="trans_finalTotalSettlementPayment" class="text-end"></td>
+              </tr>
+            </table>
+          </div>
+
+<!--          <div>-->
+<!--            <table class="print-table" id="trans_memo_table">-->
+<!--              <tr>-->
+<!--                <th class="h3 text-center" style="background-color: #247ea8; color: white">備考</th>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <td class="h3 text-center"><input type="text" id="trans_memo" class="form-control border-0 w-100 fs-5" value="" placeholder="Input note here"/></td>-->
+<!--              </tr>-->
+<!--            </table>-->
+<!--          </div>-->
+        </div>
+      </div>
+
+      <!-- 모달 footer -->
+      <div id="pgReportModalFooter" class="modal-footer">
+        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary " id="downloadPdf" style="display: none">Download PDF</button>
+      </div>
+
+      <div id="loadingSpinner" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-50" style="z-index: 1050;">
+          <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

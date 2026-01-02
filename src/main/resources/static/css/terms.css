@@ -1,0 +1,165 @@
+/* Terms 페이지 전용 스타일 */
+
+/* 인쇄 스타일 */
+@media print {
+    header,
+    footer,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .relative.py-16 {
+        padding: 0;
+    }
+}
+
+/* 약관 리스트 스타일 개선 */
+.text-lg.max-w-prose ol {
+    counter-reset: item;
+}
+
+.text-lg.max-w-prose ol > li {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.text-lg.max-w-prose ol > li:before {
+    content: counters(item, ".") ". ";
+    counter-increment: item;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+/* 약관 본문 내 테이블이 잘리지 않도록 수정 */
+.text-lg.max-w-prose {
+    overflow-x: visible !important;
+    max-width: 80ch !important; /* 본문 폭 다시 제한 (약 65자 기준) */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-lg.max-w-prose .table-wrapper {
+    width: 100%;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.text-lg.max-w-prose .fixed-table {
+    width: 100%;
+    min-width: 500px !important;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+/* 중첩 리스트 스타일 */
+.text-lg.max-w-prose ol ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.text-lg.max-w-prose ol ul li {
+    list-style-type: disc;
+    margin-bottom: 0.25rem;
+}
+
+/* 연락처 박스 강조 */
+.border.border-gray-200.rounded-lg {
+    background-color: #f9fafb;
+    transition: box-shadow 0.3s ease;
+}
+
+.border.border-gray-200.rounded-lg:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 모바일 반응형 개선 */
+@media (max-width: 640px) {
+    .text-3xl {
+        font-size: 1.875rem !important;
+    }
+
+    .text-xl {
+        font-size: 1.125rem !important;
+    }
+}
+
+.fixed-table {
+    width: 100% !important;
+    min-width: 650px !important;
+    border-collapse: collapse;
+    table-layout: auto !important;
+    border-spacing: 0;
+    overflow-x: auto;
+}
+
+.fixed-table col {
+    display: table-column;
+}
+
+.fixed-table col:nth-child(1) { width: 8% !important; }
+.fixed-table col:nth-child(2) { width: 25% !important; }
+.fixed-table col:nth-child(3) { width: 100% !important; }
+
+.fixed-table td,
+.fixed-table th {
+    border: 1px solid #e5e7eb;
+    padding: 14px 12px !important;
+    vertical-align: top;
+    line-height: 1.8;
+    font-family: "Noto Sans JP", "Arial", "Helvetica", "Noto Sans", sans-serif !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+}
+
+/* 번호 열  */
+.fixed-table td:first-child {
+    text-align: center !important;
+    vertical-align: middle !important;
+    width: 2.5rem !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+    white-space: nowrap !important;
+    font-weight: 500;
+}
+
+/* 일본어 라벨 열 */
+.fixed-table td:nth-child(2),
+.fixed-table th:nth-child(2) {
+    min-width: 220px !important;
+    padding-left: 0.75rem !important;
+}
+
+/* 본문 내용 열 */
+.fixed-table td:nth-child(3),
+.fixed-table th:nth-child(3) {
+    width: 100% !important;
+    min-width: 450px !important;
+    max-width: none !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
+}
+
+/* 링크 자동 줄바꿈 */
+.fixed-table td a {
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+

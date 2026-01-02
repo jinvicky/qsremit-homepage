@@ -1,0 +1,90 @@
+<div class="content-page">
+	<div class="content">
+		<!-- Start Content-->
+		<div class="container-fluid">
+			<!-- start page title -->
+			<div th:replace="~{fragments/title}"></div>
+			<!-- end page title -->
+			<!-- Start Filter -->
+			<!-- 검색 -->
+			<div class="card">
+				<div class="card-body">
+					<!-- Search Date -->
+					<form>
+					<div class="col-xl-12 d-flex flex-wrap mt-sm-2">
+						<label for="startDate" class="col-md-2 col-form-label">Search Date</label>
+						<div class="col-md-10">
+							<div class="d-flex align-items-center">
+								<span class="pe-sm-2">From</span>
+								<div class="input-group position-relative" id="datepickerStartDate">
+									<input id="noticeStartDate" type="text" class="form-control" data-provide="datepicker"
+											data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+											data-date-container="#datepickerStartDate"
+										    pattern="\d{4}-\d{2}-\d{2}"
+										    maxlength="10">
+									<span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+								</div><!-- input-group -->
+								<span class="px-sm-2">To</span>
+								<div class="input-group position-relative" id="datepickerEndDate">
+									<input id="noticeEndDate" type="text" class="form-control" data-provide="datepicker"
+											data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+										    data-date-container="#datepickerEndDate"
+										   	pattern="\d{4}-\d{2}-\d{2}"
+										   	maxlength="10">
+									<span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+								</div><!-- input-group -->
+								<div class="col-md-4 ms-sm-2">
+									<input type="text" class="form-control" id="globalSearch" placeholder="Global Search">
+								</div>
+							</div>
+							<ul class="date-validate-message pt-1 font-13">
+								<li>Start date cannot be later than the end date. End date cannot be earlier than the start date.</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Search Button -->
+					<div class="text-center mt-sm-1">
+						<button id="search-btn" type="button" class="btn btn-dark width-xl">Search</button>
+					</div>
+					</form>
+				</div>
+			</div>
+				<!-- 이슈 리스트 -->
+				<div class="card">
+					<div class="card-body">
+						<!-- 버튼: 오른쪽 정렬 -->
+						<!-- 테이블 -->
+						<div class="table-responsive">
+							<div id="customNewButton" class="d-flex justify-content-end mb-2">
+								<a href="/noticeManagement/new" class="btn btn-outline-primary width-xl">New Notice</a>
+							</div>
+							<input hidden="hidden" id="tablePageInput" type="number" value="">
+							<table id="noticeManagementTable" class="display table table-bordered table-hover table-centered m-0">
+								<thead>
+									<tr>
+										<th>Notice ID</th>
+										<th>Title</th>
+										<th>User</th>
+										<th>Create Date</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td colspan="10" class="text-center">No data available in table</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			<!-- End Table Card -->
+		</div>
+		<!-- content -->
+		<!-- Footer Start -->
+		<div th:replace="~{fragments/footer}"></div>
+		<!-- end Footer -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Page content -->
+	<!-- ============================================================== -->
+</div>

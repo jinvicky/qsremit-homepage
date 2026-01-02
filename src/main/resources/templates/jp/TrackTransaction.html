@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/terms-layout}">
+<head>
+    <title>QSRemit - 送金追跡</title>
+</head>
+<body>
+<div layout:fragment="terms-content">
+    <div class="relative py-16 bg-white overflow-hidden">
+        <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+            <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+                <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+                    <defs>
+                        <pattern id="74b3fd99-0a6f-4271-bef2-e80eeafdf357" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                        </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)"></rect>
+                </svg>
+                <svg class="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+                    <defs>
+                        <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                        </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)"></rect>
+                </svg>
+                <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+                    <defs>
+                        <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                        </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)"></rect>
+                </svg>
+            </div>
+        </div>
+        <div class="relative px-4 sm:px-6 lg:px-8">
+            <div class="text-lg max-w-prose mx-auto">
+                <h1>
+                    <span class="block text-base text-center text-blue-600 font-semibold tracking-wide uppercase">Thanks for sending money with us</span>
+                    <span class="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl">Track your transaction status</span>
+                </h1>
+                <div class="mx-auto w-full sm:w-2/3 mt-10 text-center border border-gray-200 py-6 px-4 rounded-xl">
+                    <label for="pin-code" class="block text-base font-medium text-blue-600">QSRemit PIN Number</label>
+                    <div class="mt-4 relative rounded-md shadow-sm w-60 mx-auto">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><span class="text-gray-500 sm:text-sm">QP</span></div>
+                        <input type="text" name="pin-code" id="pin-code" class="focus:ring-indigo-500 focus:border-blue-500 block w-full pl-10 pr-4 sm:text-sm border-gray-300 rounded-md" placeholder="" value="" />
+                    </div>
+                    <p class="text-gray-500 text-sm mt-6">Enter your 15 digit long transaction pin number to track.</p>
+                    <p class="text-gray-500 text-sm mt-3">Contact our support staff from below of you are having difficulty in using this transaction tracker.</p>
+                    <button
+                            class="mt-6 inline-flex items-center justify-center px-6 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                        Check
+                    </button>
+                </div>
+            </div>
+            <div class="mx-auto max-w-4xl py-16 px-4 sm:px-6 lg:px-8 md:mt-16">
+                <div class="mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
+                    <div>
+                        <h2 class="text-xl text-gray-800 sm:text-2xl">Head office</h2>
+                        <div class="mt-3">
+                            <p class="text-lg text-gray-500">
+                                03106 서울특별시 종로구 종로305-2 대산빌딩2층<br/>
+                                <span class="text-sm">
+                                            03106 DAESAN Bldg 2F  Jongro305-2 Jongro-Gu<br/>
+                                            Seoul, Korea
+                                        </span>
+                            </p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex">
+                                <div class="text-base text-gray-500"><p class="text-blue-600">매일 10AM~7PM</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 sm:mt-16 md:mt-0">
+                        <h2 class="text-xl text-gray-800 sm:text-2xl">Customer Support</h2>
+                        <div class="mt-4">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3 text-base text-gray-500">
+                                    <p>TEL: 02-755-6321</p>
+                                    <p class="mt-1">FAX: 02-755-6320</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3 text-base text-gray-500"><p>support@qsremit.net</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="w-full py-16 px-4 sm:px-6 lg:px-8 md:mt-16">
+            <div class="flex items-start justify-between gap-20">
+                <div class="max-w-[350px]">
+                    <h2 class="text-xl text-gray-800 sm:text-2xl">本店</h2>
+                    <div class="mt-3">
+                        <p class="text-lg text-gray-500">
+                            〒169-0073東京都新宿区百人町2-20-2-201<br />
+                            <span class="text-sm">
+                                201-2-20-2 Hyakunin-Cho, Shinjuku-Ku<br />
+                                Tokyo, Japan (169-0073)
+                            </span>
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex">
+                            <div class="text-base text-gray-500">
+                                <p class="text-yellow-600">月曜日～金曜日　午前10時～午後7時</p>
+                                <p class="text-blue-600">日曜日、祝日　午前10時～午後6時</p>
+                                <p class="text-red-600">土曜日 定休日</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-[380px]">
+                    <h2 class="text-xl text-gray-800 sm:text-2xl">カスタマーサポート</h2>
+                    <div class="mt-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-500">
+                                <p>TEL: 03-5937-6321</p>
+                                <p class="mt-1">FAX: 03-5937-6320</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-3 text-base text-gray-500"><p>support@qsremit.net</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

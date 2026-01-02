@@ -1,0 +1,71 @@
+<div class="content-page">
+	<div class="content">
+		<!-- Start Content-->
+		<div class="container-fluid">
+			<!-- start page title -->
+			<div th:replace="~{fragments/title}"></div>
+			<!-- end page title -->
+			<!-- Start Table Card -->
+			<div class="card">
+				<div class="card-body">
+					<div class="table-responsive">
+						<div>
+							<div class="mb-3 d-flex flex-wrap justify-content-between align-items-end gap-2">
+								<ul class="col-md-8 mb-0">
+									<li>
+										Accounts highlighted in red are locked due to multiple failed login attempts.
+										They will be automatically unlocked after using "Reset Password" or changing the password manually.
+									</li>
+									<li>
+										To request a role change, please create an issue in the
+										<a href="/issueManagement/issueManagement">issue management system.</a>
+									</li>
+								</ul>
+								<div>
+									<a href="/user/newUser" type="button" class="btn btn-outline-primary width-xl">New User</a>
+								</div>
+							</div>
+							<input hidden="hidden" id="tablePageInput" type="number" value="">
+							<table id="userTable"
+								class="display table table-bordered table-hover table-centered m-0 ">
+								<thead>
+									<tr>
+										<th>No.</th>
+										<th>User Type</th>
+										<th>ID</th>
+										<th>Name</th>
+										<th>Registration Date</th>
+										<th>Delete User</th>
+										<th>Reset Password</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>					
+						            <tr th:each="item : ${users}">
+										<td></td>
+						                <td th:text="${item.userType}"></td>
+						                <td th:text="${item.userId}"></td>
+						                <td th:text="${item.name}"></td>
+						                <td th:text="${item.createAt}"></td>
+										<td class="text-center"></td>
+										<td class="text-center"></td>
+										<td th:text="${item.id}"></td>
+						            </tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Table Card -->
+		</div>
+		<!-- content -->
+		<!-- Footer Start -->
+		<div th:replace="~{fragments/footer}"></div>
+		<div th:replace="~{common/loadingSpinner.html}"></div>
+		<!-- end Footer -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Page content -->
+	<!-- ============================================================== -->
+</div>

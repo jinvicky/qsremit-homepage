@@ -1,0 +1,44 @@
+//
+// price.scss
+//
+.pricing {
+    &.price-bundle,
+    &.price-table {
+        transition: all 0.2s ease;
+    }
+    &.price-bundle {
+        .price-img {
+            position: absolute;
+            top: 30%;
+            right: 24px;
+            transform: translateY(-30%);
+            opacity: 0.05;
+            transition: all 0.2s ease;
+        }
+        &:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba($dark, 0.15)!important;
+            .price-img {
+                opacity: 0.1;
+            }
+        }
+    }
+    &.price-table {
+        .price-top,
+        .price-content,
+        .price-feature .table-addon {
+            transition: all 0.4s ease;
+        }
+        &:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 25px rgba($dark, 0.15)!important;
+            .price-top {
+                background: $light;
+            }
+            .price-content,
+            .price-feature .table-addon {
+                color: $primary;
+            }
+        }
+    }
+}

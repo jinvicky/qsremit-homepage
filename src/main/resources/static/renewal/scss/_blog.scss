@@ -1,0 +1,327 @@
+//
+// blog.scss
+//
+.blog-post {
+    .blog-img {
+        .overlay {
+            background-color: $dark;
+        }
+        .author-desc {
+            bottom: 20px;
+            left: 10px;
+            .author {
+                .name {
+                    &:hover {
+                        color: $primary !important;
+                    }
+                }
+            }
+        }
+    }
+    .blog-content {
+        h5 {
+            line-height: 1.3;
+        }
+        .title {
+            font-size: 18px !important;
+            transition: all 0.5s ease;
+            &:hover {
+                color: $primary !important;
+            }
+        }
+        .post-meta {
+            .like,
+            .comment,
+            .read,
+            .tag {
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+            .like {
+                &:focus {
+                    .like-icon {
+                        color: $danger;
+                        fill: $danger;
+                    }
+                }
+            }
+        }
+    }    
+    &:hover {
+        transform: translateY(-10px);
+        &.single-blog-post {
+            transform: translateY(0px);
+        }
+        .blog-img {
+            .overlay {
+                opacity: 0.6;
+            }
+            .author-desc {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.blog-post .blog-img .overlay,
+.blog-post .blog-img .author-desc,
+.popular-tour .overlay,
+.popular-tour .overlay-work {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.blog-post .blog-img .overlay,
+.popular-tour .overlay,
+.popular-tour .overlay-work {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.sticky-bar {
+    position: sticky;
+    top: 80px;
+}
+//Sidebar
+.sidebar {
+    .widget {
+        .title {
+            font-size: 18px !important;
+        }
+        .widget-search {
+            form {
+                position: relative;
+            }
+        }
+        .widget-search, .searchform { 
+            input[type="text"] {
+                box-shadow: none;
+                padding: 12px 15px;
+                height: 45px;
+                font-size: 14px;
+                width: 100%;
+                outline: none !important;
+                padding-right: 45px;
+            }
+            input[type="submit"] {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                opacity: 0;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .widget-search {
+            .searchform:after {
+                content: "\F0349";
+                position: absolute;
+                font-family: "Material Design Icons";
+                right: 16px;
+                top: 15px;
+                font-size: 20px;
+                line-height: 20px;
+                pointer-events: none;
+            }
+        }
+        .catagory{
+            li {
+                padding-bottom: 10px;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                a, span {
+                    font-size: 15px;
+                }
+                a {
+                    color: $dark;
+                    transition: all 0.5s ease;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+            }
+        }  
+        .widget-grid {
+            .item {
+                position: relative;
+                width: 33.33333333%;
+                padding-top: 33.33333333%;
+                float: left;
+                a {
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    right: 4px;
+                    bottom: 4px;
+                    overflow: hidden;
+                }
+                &:first-child {
+                    width: 66.66666666%;
+                    padding-top: 66.66666666%;
+                }
+                &:nth-child(4) {
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+.tagcloud {
+    > a {
+        background: $gray-200;
+        color: $dark;
+        display: inline-block;
+        font-size: 9px;
+        letter-spacing: 1px;
+        margin: 5px 10px 5px 0;
+        padding: 8px 12px;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        &:hover {
+            background: $primary;
+            color: $white;
+        }
+    }
+}
+//single post
+.media-list {
+    .comment-desk {
+        a {
+            &:hover{
+                color: $primary !important;
+            }
+        }
+    }
+}
+
+//Job Landing
+.job-catagory,
+.explore-feature {
+    transition: all 0.5s ease;
+    .title {
+        font-size: 18px;
+        transition: all 0.5s ease;
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    .icon {
+        height: 80px;
+        width: 80px;
+        line-height: 80px;
+        transition: all 0.5s ease;
+    }
+    &:hover {
+        box-shadow: 0 10px 25px rgba($dark, 0.15) !important;
+        background-color: $white;
+        .icon {
+            color: $primary;
+        }
+    }
+}
+.job-listing {
+    .like {
+        .like-icon {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        &:focus {
+            .like-icon {
+                color: $danger;
+                fill: $danger;
+            }
+        }
+    }
+    &:hover {
+        .like {
+            .like-icon {
+                opacity: 1;
+            }
+        }
+    }
+}
+.job-grid {
+    .job-title,
+    .company {
+        transition: all 0.5s ease;
+        &:hover {
+            color: $primary !important;
+        }
+    }
+    .job-type {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        transform: translateX(100px);
+        transition: all 0.5s ease;
+    }
+    &:hover {
+        background: $light;
+        .job-type {
+            transform: translateX(0);
+        }
+    }
+}
+
+.job-grid,
+.job-listing {
+    transition: all 0.5s ease;
+    .content {
+        .title,
+        .job-title {
+            font-size: 18px !important;
+        }
+    }
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+//Online courses
+.blog-post,
+.popular-course {
+    transition: all 0.5s ease;
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+//Travel
+.popular-tour {
+    .overlay-work,
+    .overlay {
+        background-color: $black !important;
+    }
+    img {
+        transition: all 0.8s ease;
+    }
+    .content {
+        position: absolute;
+        bottom: 3%;
+        left: 5%;
+    }
+    &:hover {
+        .overlay-work,
+        .overlay {
+            opacity: 0.65 !important;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+@media (min-width: 576px) {
+    .candidate-detail {
+        .candidate-detail-top {
+            display: flex;
+        }
+    }
+}

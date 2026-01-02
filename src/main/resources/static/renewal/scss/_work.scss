@@ -1,0 +1,192 @@
+//
+// work.scss
+//
+
+.filter-box {
+    display: none;
+    &.show {
+        display: block;
+    }
+}
+
+//Tobii Lighbox
+.tobii__btn svg {
+    height: 30px;
+    width: auto;
+}
+.tobii__counter {
+    font-size: 16px;
+}
+.tobii-zoom {
+    display: block !important;
+}
+
+.tobii-zoom__icon {
+    display: none;
+}
+
+#grid {
+    padding: 0 !important;
+}
+
+//video iframe
+@media (max-width: 640px) {
+    [data-type] iframe, [data-type] video {
+        width: 500px;
+        height: 300px;
+    }
+}
+@media (max-width: 425px) {
+    [data-type] iframe, [data-type] video {
+        width: 360px;
+        height: 260px;
+    }
+}
+@media (max-width: 375px) {
+    [data-type] iframe, [data-type] video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.container-filter {
+    li {
+        font-size: 14px;
+        padding: 0px 5px; 
+        margin: 0 5px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        cursor: pointer;
+        line-height: 34px;
+        transition: all 0.5s ease;
+        &:hover {
+            color: $dark !important;
+        }
+        &.active {
+            color: $primary !important;
+        }
+    }
+}
+
+.work-container {
+    &.work-classic {
+        .work-image {
+            transition: all 0.5s ease;
+            &:hover {
+                box-shadow: $shadow !important;
+            }
+        }
+    }
+    &.work-classic,
+    &.work-grid,
+    &.work-modern {
+        .content {
+            .title {
+                font-size: 18px;
+                transition: all 0.5s ease;
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+            .tag {
+                font-size: 15px !important;
+            }
+        }
+    }
+    &.work-modern {
+        .overlay-work {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0; 
+            transition: all 0.5s ease;
+            z-index: 1;
+            background: $dark !important;
+        }
+        .content,
+        .icons {
+            position: absolute;
+            right: 0;
+            left: 0;
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+        .content {
+            transform: translateY(200px);
+            bottom: 0;
+        }
+        .icons {
+            transform: translateY(-200px);
+            top: 0;
+            .work-icon {
+                height: 45px;
+                width: 45px;
+                line-height: 45px;
+                transition: all 0.5s ease;
+                &:hover {
+                    background: $primary !important;
+                    color: $white !important;
+                }
+            }
+        }
+        &:hover {
+            .overlay-work {
+                opacity: 0.6;
+            }
+            .content {
+                transform: translateY(0);
+            }
+            .icons {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &.work-grid {
+        transition: all 0.5s ease;
+        img, .content, .content .title {
+            transition: all 0.5s ease;
+        }
+        .content {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transform: translateY(150px);
+            overflow: hidden;
+            .title {
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+        }
+        &:hover { 
+            box-shadow: $shadow;
+            img {
+                transform: translateY(-40px);
+            }
+            .content {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.it-work-icons{
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow: 0px 0px 21px 2px $gray-100;
+    font-size: 30px;
+    padding: 6px;
+}
+
+.call{
+    &:hover{
+        text-decoration: underline !important;
+    }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+	xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<div layout:fragment="content" th:replace="~{contents/dashboard1}">
+	</div>
+	
+	<th:block layout:fragment="add_js">
+	<!-- Dashboard init-->
+	<script src="/js/pages/dashboard-sales.init.js"></script>	
+	</th:block>
+
+</html>

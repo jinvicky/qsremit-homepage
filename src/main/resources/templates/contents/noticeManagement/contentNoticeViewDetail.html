@@ -1,0 +1,24 @@
+<div class="content-page" id="noticeDetailWrapper"
+     th:data-notice-id="${noticeId}">
+    <div class="content">
+        <div class="container-fluid">
+            <div th:replace="~{fragments/title}"></div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 id="noticeTitle" class="card-title mb-3">공지 제목</h4>
+                    <hr/>
+                    <div id="noticeDescription" class="notice-content">내용</div>
+                </div>
+
+                <div class="card-footer d-flex justify-content-end">
+                    <a th:href="@{/noticeManagement/noticeViewList}" class="btn btn-sm btn-secondary">
+                        목록으로
+                    </a>
+                </div>
+            </div>
+
+            <div th:replace="~{fragments/footer}"></div>
+        </div>
+    </div>
+</div>

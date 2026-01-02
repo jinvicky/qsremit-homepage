@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" data-topbar-color="brand"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<div th:replace="~{fragments/head}">
+        <th:block layout:fragment="add_css"></th:block>
+    </div>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+            
+            <!-- Topbar Start -->
+			<!-- <div th:replace="~{fragments/navbar}"></div> -->
+            <!-- Topbar End -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div th:replace="~{fragments/leftSideMenu}"></div>
+            <!-- Left Sidebar End -->
+
+            <!-- ========== Header Start ========== -->
+            <div th:replace="~{fragments/header}"></div>
+            <!-- Header End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+			<th:block layout:fragment="content"></th:block>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- END wrapper -->
+
+		<!-- <div th:replace="~{fragments/right}"></div>  -->
+
+		<div th:replace="~{fragments/script}"></div>
+		
+		<th:block layout:fragment="add_js"></th:block>
+    </body>
+    
+</html>

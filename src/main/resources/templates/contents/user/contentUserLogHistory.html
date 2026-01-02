@@ -1,0 +1,152 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div th:replace="~{fragments/title}"></div>
+            <!-- end page title -->
+            <!-- Start Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <form class>
+                        <div class="d-flex flex-wrap align-items-center">
+                            <label class="col-md-2 col-form-label" for="allCheck">Event Type</label>
+                            <div class="d-flex flex-wrap col-md-10">
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="loginCheck" value="LOGIN">
+                                    <label class="form-check-label" for="loginCheck">LOGIN</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="logoutCheck" value="LOGOUT">
+                                    <label class="form-check-label" for="logoutCheck">LOGOUT</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="createCheck" value="CREATE">
+                                    <label class="form-check-label" for="createCheck">CREATE</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="updateCheck" value="UPDATE">
+                                    <label class="form-check-label" for="updateCheck">UPDATE</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="deleteCheck" value="DELETE">
+                                    <label class="form-check-label" for="deleteCheck">DELETE</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="crawlingCheck" value="CRAWLING">
+                                    <label class="form-check-label" for="crawlingCheck">CRAWLING</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="apicallCheck" value="APICALL">
+                                    <label class="form-check-label" for="apicallCheck">APICALL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-sm-2 d-flex flex-wrap align-items-start align-items-center">
+                            <div class="col-xl-6 d-flex flex-wrap align-items-center">
+                                <label for="userId" class="col-md-4">User ID</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="userId" name="userId" type="text">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 d-flex flex-wrap align-items-center">
+                                <label class="col-md-4">Client Type</label>
+                                <div class="d-flex align-items-center">
+                                    <input class="form-radio-input" name="clientType" id="clientAll" type="radio" value="">
+                                    <label class="" for="clientAll">ALL</label>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <input class="form-radio-input" name="clientType" id="clientWeb" type="radio" value="WEB">
+                                    <label class="" for="clientWeb">WEB</label>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <input class="form-radio-input" name="clientType" id="clientApp"  type="radio" value="APP">
+                                    <label class="" for="clientApp">APP</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-sm-3 d-flex flex-wrap align-items-start">
+                            <div class="col-xl-6 d-flex flex-wrap align-items-center">
+                                <label for="userId" class="col-md-4">Event Category</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="EventCategory" name="EventCategory" type="text">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 d-flex flex-wrap align-items-center">
+                                <label for="userEventSelect" class="col-md-4">Status</label>
+                                <div class="col-md-6">
+                                    <select class="form-select" id="statusSelect" name="userEventSelect">
+                                        <option value="">Select</option>
+                                        <option value="SUCCESS">SUCCESS</option>
+                                        <option value="FAIL">FAIL</option>
+                                        <option value="ERROR">ERROR</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-sm-3 d-flex flex-wrap align-items-start">
+                            <label for="startDate" class="col-md-2 col-form-label">Date</label>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <span class="pe-sm-2">From</span>
+                                    <div class="input-group position-relative" id="datepickerStartDate">
+                                        <input id="startDate" type="text" class="form-control" data-provide="datepicker"
+                                               data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                               data-date-container="#datepickerStartDate"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               maxlength="10">
+                                        <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                    </div><!-- input-group -->
+                                    <span class="px-sm-2">To</span>
+                                    <div class="input-group position-relative" id="datepickerEndDate">
+                                        <input id="endDate" type="text" class="form-control" data-provide="datepicker"
+                                               data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                               data-date-container="#datepickerEndDate"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               maxlength="10">
+                                        <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                    </div><!-- input-group -->
+                                </div>
+                                <ul class="date-validate-message pt-1 font-13">
+                                    <li>Start date cannot be later than the end date. End date cannot be earlier than the start date.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-center mt-sm-1">
+                            <button id="searchBtn" type="button" class="btn btn-dark width-xl">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Filter -->
+            <!-- Start Table Card -->
+            <div class="card">
+                <div class="card-body">
+                    <input hidden="hidden" id="tablePageInput" type="number" value="">
+                    <div class="table-responsive">
+                        <div id="loadingSpinner" style="display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); z-index: 10000;">
+                            <div class="spinner-border text-primary" role="status" style="position: absolute; top: 50%; left: 50%;">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <table id="userLogHistoryTable"
+                               class="display table table-bordered table-hover table-centered m-0">
+                            <thead>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Table Card -->
+        </div>
+        <!-- content -->
+        <!-- Footer Start -->
+        <div th:replace="~{fragments/footer}"></div>
+        <!-- end Footer -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+</div>

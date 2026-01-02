@@ -1,0 +1,52 @@
+<head th:fragment="head">
+	<meta charset="utf-8" />
+	<title th:text="${title} + ' | NextQSRemit v1.0'"> </title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+	<meta content="Coderthemes" name="author" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+	<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}" />
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="/nnp/images/favicon.ico">
+	
+	<!-- plugin css -->
+	<link href="/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+	<link href="/libs/mohithg-switchery/switchery.min.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/selectize/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+
+	<link href="/libs/spectrum-colorpicker2/spectrum.min.css" rel="stylesheet" type="text/css">
+	<link href="/libs/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css">
+
+	<!-- App css -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+	
+	<!-- icons -->
+	<link href="/css/icons.min.css" rel="stylesheet" type="text/css" />
+	
+	<!-- nnp_custom -->
+	<link href="/nnp/css/nnpCustom.css" rel="stylesheet" type="text/css" />
+	<link href="/nnp/libs/DataTables/datatables.min.css" rel="stylesheet">
+
+	<!-- Plugins css -->
+	<link href="/libs/quill/quill.core.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/quill/quill.bubble.css" rel="stylesheet" type="text/css" />
+	<link href="/libs/quill/quill.snow.css" rel="stylesheet" type="text/css" />
+
+	<!-- Plugins js -->
+	<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+
+	<!-- Theme Config Js -->
+	<script src="/js/config.js"></script>
+	<th:block layout:fragment="add_css"></th:block>
+</head>

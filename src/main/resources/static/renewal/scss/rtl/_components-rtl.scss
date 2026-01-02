@@ -1,0 +1,447 @@
+//
+// components.scss
+//
+.btn-group {
+    .dropdown-toggle {
+        &:after {
+            right: auto;
+            left: -4px !important;
+            border-width: 2px 0 0 2px;
+            transform: rotate(-135deg);
+            margin-left: auto;
+            margin-right: 0 !important;
+        }
+    }
+    .dropdown-menu {
+        &:before {
+            left: auto;
+            right: 10px !important;
+        }
+        &.show {
+            left: -45px !important;
+        }
+        .dropdown-item {
+            text-align: right;
+        }
+    }
+}
+
+//Alert
+.alert {
+    &.alert-dismissible {
+        padding-left: 30px !important;
+        padding-right: 15px;
+        .close {
+            right: auto;
+            left: -10px !important;
+        }
+    }
+}
+
+//Pagination
+.pagination {    
+    li {
+        &:first-child a {
+            border-right-width: 1px;
+            border-radius: 5px 30px 30px 5px;
+        } 
+        &:last-child a {
+            border-radius: 30px 5px 5px 30px;
+        }
+        a {
+            float: right !important;
+        }
+    }              
+}
+
+//Breadcrumb
+.page-next-level{
+    .page-next {
+        li {
+            margin-left: 5px !important;
+            margin-right: 0 !important;
+            &:before {
+                content: "\F0141";
+                font-family: 'Material Design Icons';
+                // color: $dark; 
+                padding-right: 5px;
+            }   
+            &.icon-light {
+                &:before {
+                    color: $white;
+                }
+            }
+            &:after {
+                display: none;
+            }
+            &:last-child {
+                &:before {
+                    display: none;
+                }
+            } 
+        }
+    }
+}
+
+//Accordion
+.accordion {
+    .accordion-item {
+        .accordion-button {
+            text-align: right;
+            &:before {
+                left: 20px;
+                right: auto;
+            }
+        }
+    }
+
+    .accordion-button {
+        &:after {
+            margin-right: auto !important;
+            margin-left: 0;
+        }
+    }
+}
+
+//Progressbar
+.progress-box {
+    .progress {
+        .progress-value {
+            left: -15px !important;
+            right: auto;
+        }
+    }
+}
+
+
+//Contact 
+.form-group {
+    text-align: right;
+    .icons {
+        right: 18px;
+        left: auto;
+    }
+}
+.custom-control {
+    padding-right: 1.5rem;
+    padding-left: 0;
+    &.custom-switch {
+        padding-right: 2.25rem !important;
+    }
+}
+.custom-control-label{
+    &:before,
+    &:after {
+        right: -1.5rem;
+    }
+}
+.form-check-inline {
+    margin-right: 0;
+    padding-left: .75rem;
+}
+.custom-control-inline {
+    margin-left: 1rem;
+    margin-right: 0;
+}
+.custom-switch .custom-control-label{
+    &:before {
+        right: -2.35rem;
+    }
+    &:after {
+        left: calc(-2.25rem + 2px);
+    }
+}
+
+.custom-select {
+    padding: .375rem .75rem .375rem 1.75rem !important;
+    background-position: left 0.75rem center!important;
+}
+
+//Subscribe form
+.subcribe-form {
+    input {
+        padding-left: 130px !important;
+        padding-right: 20px;
+    }
+    button {
+        right: auto;
+        left: 6px !important;
+    }
+}
+
+.blockquote {
+    &:before {
+        right: 10px !important;
+        left: auto;
+    }
+}
+
+//back to top
+.back-to-top {
+    left: 30px !important;
+    right: auto;
+}
+
+//back-to-home
+.back-to-home {
+    left: 2% !important;
+    right: auto;
+}
+//============================== Start Common scss========================================//
+//
+// blog.scss
+//
+.blog-post {
+    .blog-img {
+        .author-desc {
+            right: 10px !important;
+            left: auto;
+        }
+    }
+}
+.sidebar {
+    .widget {
+        .widget-search, .searchform { 
+            input[type="text"] {
+                padding-right: 15px !important;
+                padding-left: 45px !important;
+            }
+            input[type="submit"] {
+                right: auto;
+                left: 10px !important;
+            }
+        }
+        .widget-search {
+            .searchform{
+                &:after {
+                    left: 16px !important;
+                    right: auto;
+                }
+            }
+        }
+    }
+}
+.tagcloud {
+    > a {
+        margin: 5px 0 5px 10px !important;
+    }
+}
+
+.job-listing {
+    .like {
+        .like-icon {
+            right: 8px !important;
+            left: auto;
+        }
+    }
+}
+
+.job-grid {
+    .job-type {
+        left: 0 !important;
+        right: auto;
+        transform: translateX(-100px);
+    }
+}
+
+.job-grid,
+.job-listing {
+    transition: all 0.5s ease;
+    .content {
+        .title,
+        .job-title {
+            font-size: 18px !important;
+        }
+    }
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+//Travel
+.popular-tour {
+    .content {
+        right: 5% !important;
+        left: auto;
+    }
+}
+
+//
+// contact.scss
+//
+.custom-form {
+    &.contact-creative {
+        .contact-hide-btn {
+            left: -15px !important;
+            right: auto;
+        }
+    }
+}
+.contact-show-btn {
+    right: 50% !important;
+    transform: translate(50%, -50%) !important;
+    left: auto;
+    &:before {
+        right: 0 !important;
+        left: auto;
+    }
+}
+
+//
+// home.scss
+//
+.bg-animation-left {
+    &:after {
+        right: 0px !important;
+        left: auto;
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%) !important;
+    }
+    &.ani-travel {
+        &:after {
+            clip-path: circle(75% at 100% 50%) !important;
+        }
+    }
+}
+
+.social-media-wrapper {
+    &:before {
+        left: 15rem !important;
+        right: auto;
+        transform: rotate(100deg);
+    }
+}
+
+//Job Landing
+.form-inline {
+    .icons {
+        right: 0 !important;
+        left: auto;
+    } 
+}
+
+//Digital Marketing
+.bg-digital-marketing {
+    .digital-hero {
+        border-bottom-left-radius: 30% !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    .play-icon {
+        right: auto;
+        left: 0px !important;
+    }
+}
+
+.online-course-bg {
+    .container-fluid {
+        .padding-less {
+            &.img {
+                border-radius: 0 0 0 80px;
+            }
+        }
+    }
+}
+
+//Job hero
+.job-home-hero {
+    .container-fluid {
+        .padding-less {
+            &.img {
+                border-radius: 0px 80px 80px 0px !important;
+            }
+        }
+    }
+}
+
+//
+// price.scss
+//
+.pricing {
+    &.price-bundle {
+        .price-img {
+            left: 24px !important;
+            right: auto;
+        }
+    }
+}
+
+//
+// testi.scss
+//
+.swiper-slider-hero, .tns-inner, .tns-nav, .swiper-slider-hero {
+    direction: ltr;
+}
+
+.tns-visually-hidden {
+    left: 0 !important;
+    visibility: hidden;
+}
+
+.review {
+    .content {
+        .icons { 
+            left: 4% !important;
+            right: auto;
+        }
+    }
+    .review-icon {
+        right: auto;
+        left: 0 !important;
+    } 
+}
+
+//Switcher
+#style-switcher {
+    .bottom {
+        a {
+            &.settings {
+                i {
+                    margin-left: auto;
+                    margin-right: 5px !important;
+                }
+            }
+        }
+    }
+}
+
+// Responsive css
+@media (min-width: 768px) {
+    .attach-icons-hero {
+        left: 0;
+        right: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+    .bg-animation-left {
+        &.ani-travel {
+            &:after {
+                clip-path: circle(65% at 100% 50%);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .bg-animation-left {
+        &.ani-travel {
+            &:after {
+                clip-path: circle(85% at 50% 0%);
+            }
+        }
+    }
+}
+
+.dashboard-shape-two {
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 5rem;
+        right: -9rem;
+        width: 70rem;
+        height: 50rem;
+        z-index: -1;
+        background-color: $blue;
+        border-radius: 30rem;
+        transform: rotate(45deg);
+        opacity: 0.8;
+    }
+}

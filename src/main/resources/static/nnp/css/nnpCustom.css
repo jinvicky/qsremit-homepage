@@ -1,0 +1,387 @@
+/*폰트 색 검정색으로 표시 */
+input,
+textarea,
+select,
+option {
+	color: #111;
+}
+
+.left-side-menu *:not([style*="color"]) {
+	color: #111;
+}
+
+.dropdown-menu *:not([style*="color"]) {
+	color: #111;
+}
+
+body,
+body *:not(button):not(button *):not([class*="btn"]):not([class*="btn"] *):not(a[href]):not(a[href] *):not(.left-side-menu *):not(footer):not(footer *):not(.selected):not(.selected *):not([class*="parsley-required"]):not([class*="badge"]) {
+	color: #111;
+}
+
+a[href]:not([class*="btn"]):not(.left-side-menu a):not(.page-tabs a) {
+	color: #3bafda;
+}
+
+.btn-soft-secondary,
+.btn-soft-secondary * {
+	color: #111;
+}
+/*--------------------*/
+
+.left-side-menu {
+  width: 300px;
+}
+
+#header {
+	margin-left: 300px;
+}
+
+html[data-sidebar-size=condensed] #header {
+	margin-left: 70px;
+}
+
+html[data-sidebar-size=full]:not([data-layout-mode=horizontal]) .left-side-menu .logo-box {
+	width: 300px;
+}
+
+#header .top-nav-menu {
+	height: 70px;
+	background-color: #ef7133;
+}
+.modal-xxl {
+	max-width: 1400px;
+}
+
+#header .tabs-container {
+	flex-wrap: wrap;
+	background-color: #fff;
+	margin-top: 70px;
+	margin-bottom: 0;
+	padding: 24px 27px 0;
+	position: relative;
+}
+#header .page-tabs {
+	padding-right: 5.5em;
+}
+#header .tabs-container .remove-all-tabs {
+	position: absolute;
+	bottom: 0;
+	right: 27px;
+}
+#header .page-tabs .nav-item {
+	flex-basis: unset !important;
+	flex-grow: unset !important;
+	width: 20%;
+	height: 4em;
+}
+#header .page-tabs.nav-tabs .nav-link {
+	text-align: center;
+	border: 1px solid #dee2e6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: inherit;
+}
+#header .page-tabs.nav-tabs .nav-link.active {
+	background-color: #034EA2;
+	color: #fff;
+}
+
+.datepicker table tr td.disabled {
+	color: #dfdfdf;
+}
+
+.nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.content-page {
+    margin-left: 300px;
+    padding: 0 15px 65px 15px;
+}
+
+.logo-box {
+	width: 300px;
+	background-color: #ef7133 !important;
+}
+
+.page-title-box {
+	padding: 24px 27px;
+}
+.page-title-box .page-title {	
+    font-size: 1.2rem;
+}
+
+.page-item.active .page-link {
+	background-color: #ef7133 !important;
+	border-color: #ef7133 !important;
+}
+.page-item:active .page-link {
+	color: #ef7133 !important;
+	border-color: #ef7133 !important;
+}
+
+table.dataTable {
+	margin-bottom: 0 !important;
+	width: 100% !important;
+}
+
+.dt-scroll-headInner {
+	width: 100% !important;
+}
+
+
+#searchResults ul {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#searchResults li {
+    cursor: pointer;
+}
+
+
+.select2-container .select2-selection--single .select2-selection__rendered,
+form input, form select {
+	background-color: #F7F7FF !important;
+}
+
+form .form-radio {
+	display: flex;
+	align-items: center;
+}
+form input[type="checkbox"],
+form input[type="radio"] {
+    width: 1.5em;
+    height: 1.5em;
+	margin-top: 0;
+	margin-right: 0.3em;
+	margin-left: 0.7em;
+	border: 2px solid #dfdfdf;
+}
+
+.datepicker table tr td.active.active, .datepicker table tr td span.active.active,
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #ef7133 !important;
+}
+
+/* NNP CI
+	--bs-btn-color: #fff;
+	--bs-btn-bg: #ef7133;
+	--bs-btn-border-color: #ef7133;
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-bg: #d8632d;
+	--bs-btn-hover-border-color: #cc5d2a;
+	--bs-btn-focus-shadow-rgb: 239, 113, 51;
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-bg: #cc5d2a;
+	--bs-btn-active-border-color: #bf5627;
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #fff;
+	--bs-btn-disabled-bg: #ef7133;
+	--bs-btn-disabled-border-color: #ef7133;
+*/
+
+#sidebar-menu>ul>li>a:active,
+#sidebar-menu>ul>li>a:focus,
+#sidebar-menu>ul>li>a:hover,
+#sidebar-menu .menuitem-active>a,
+#sidebar-menu .menuitem-active .active,
+.nav-second-level li a:focus,
+.nav-second-level li a:hover {
+	color: #ef7133 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-outline-primary:active,
+.btn-outline-primary:hover {
+    background-color: #d8632d !important;
+    border-color: #cc5d2a !important;
+}
+
+.btn-primary {
+    border: 1px solid #ef7133 !important;
+    background-color: #ef7133 !important;
+}
+.btn-outline-primary {
+	border: 1px solid #ef7133 !important;
+	background-color: #fff;
+	color: #ef7133 !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #ef7133 !important;
+}
+.nav-link:focus, .nav-link:hover {
+    color: #ef7133 !important;
+}
+
+.form-check-input:checked {
+    background-color: #ef7133 !important;
+    border-color: #ef7133 !important;
+}
+
+iframe {
+	border: none;
+    overflow: hidden;
+}
+
+/* 수정 */
+input[disabled],
+select[disabled] {
+	background-color: #fff !important;
+	color: #495057;
+	cursor: not-allowed;
+	opacity: 1;
+}
+
+/* Outbound, Inbound History Table */
+table#transactionOutboundTable.dataTable>thead>tr>th,
+table#transactionOutboundTable.dataTable>tbody>tr>td,
+table#transaction-inbound-table.dataTable>thead>tr>th,
+table#transaction-inbound-table.dataTable>tbody>tr>td
+{
+	padding: 6px 4px;
+	font-size: 12px;
+}
+table#transactionOutboundTable.dataTable>thead>tr>th {
+	white-space: pre-wrap;
+}
+
+/* Daily Summary Table */
+table#dailySummaryTable {
+	table-layout: fixed;
+	width: 100%;
+	font-size: 12px;
+}
+
+table#dailySummaryTable td:nth-child(6) {
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+table#dailySummaryTable td:nth-child(6):hover {
+	background-color: rgba(0, 123, 255, 0.1);
+}
+
+@media print {
+	body {
+		font-size: 0.5em;
+	}
+	.table>:not(caption)>*>* {
+	    padding: .3rem;
+    }
+}
+
+@media (max-width: 992px) {
+	#header {
+		margin-left: 0;
+	}
+
+	#header .page-tabs .nav-item {
+		width: 25%;
+	}
+}
+
+.dt-resize-handle {
+	position: absolute;
+	right: -3px;
+	top: 0;
+	height: 100%;
+	width: 6px;
+	cursor: col-resize;
+	z-index: 1;
+}
+
+.dt-resize-handle:hover,
+.dt-resize-handle.dragging {
+	background-color: #f8f9fa;
+}
+
+.dt-resize-hover {
+	background-color: #f8f9fa;
+}
+
+.color-picker-wrapper {
+	display: flex;
+	align-items: center;
+	width: 155px;
+	border: 1px solid #aaa;
+	font-size: 12px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.color-picker {
+	-webkit-appearance: none; /* 크롬/사파리 */
+	-moz-appearance: none;    /* 파이어폭스 */
+	appearance: none;         /* 표준 */
+
+	border: none;
+	background: transparent;
+	width: 40px;
+	height: 100%;
+	padding: 0;
+	cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border: none;
+}
+.color-picker::-webkit-color-swatch {
+	border: none;
+	border-radius: 0;
+}
+
+.color-picker-text {
+	width: 70%;
+}
+
+
+/**
+ * 데이터 테이블 로딩 스피너 오버레이 설정
+ */
+/* 부모 컨테이너를 기준점으로 설정 */
+.dt-container {
+	position: relative;
+}
+
+/* 오버레이: 테이블 전체 덮기 */
+.dt-container::before {
+	content: "";
+	position: absolute;
+	inset: 0; /* top, right, bottom, left = 0 */
+	background: rgba(255, 255, 255, 0.6); /* 반투명 흰색 */
+	backdrop-filter: blur(2px); /* 흐림 효과 */
+	z-index: 10;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	pointer-events: none; /* 기본 비활성 */
+}
+
+/* 스피너가 보일 때 (display:block) 부모 오버레이 활성화 */
+.dt-container:has(.dt-processing[style*="display: block"])::before {
+	opacity: 1;
+	pointer-events: all;
+}
+
+.notice-content {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.notice-content img {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	width: auto !important;
+	height: auto !important;
+}

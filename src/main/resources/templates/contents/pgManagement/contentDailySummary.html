@@ -1,0 +1,120 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- Start Page title -->
+            <div th:replace="~{fragments/title}"></div>
+            <!-- End page title -->
+            <!-- Start Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <span id="dateTitle" class="h3 mb-lg-1">Yesterday</span>
+                    <form>
+                        <div class="d-flex flex-wrap align-items-start mt-2 justify-content-between">
+                            <div class="col-12 d-flex flex-wrap align-items-center">
+                                <label for="searchCustomerType" class="col-md-1 col-form-label mb-1">Customer Type</label>
+                                <div id="searchCustomerType" class="d-flex flex-wrap">
+                                    <div class="form-check pe-1 d-flex align-content-center" th:if="${type.active}" th:each="type: ${customerTypes}">
+                                        <input class="form-check-input ms-1 searchCustomerType" type="checkbox"
+                                               th:id="${type.id}"
+                                               th:value="${type.id}">
+                                        <label class="form-check-label"
+                                               th:for="${type.customerType + 'check'}"
+                                               th:text="${type.customerType}">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex flex-wrap align-items-start mt-1">
+                                <label for="depositDate" class="col-md-1 col-form-label me-2">Deposit Date</label>
+                                <input class="form-check-input ms-2 me-1 mt-1" type="checkbox" id="rangeSearch" value="">
+                                <span class="me-3 mt-1">Search Range</span>
+                                <input type="hidden" id="startDateInput" value="">
+                                <input type="hidden" id="endDateInput" value="">
+                                <div class="d-flex flex-grow-1">
+                                    <div id="singleDate" class="me-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="input-group position-relative" id="datepickerDate">
+                                                <input id="depositDate" type="text" class="form-control" data-provide="datepicker"
+                                                       data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                       data-date-container="#datepickerDate"
+                                                       pattern="\d{4}-\d{2}-\d{2}"
+                                                       maxlength="10">
+                                                <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                            </div> <!-- input-group -->
+                                        </div>
+                                    </div>
+                                    <div id="rangeDate" class="col-md-8" style="display: none;">
+                                        <div class="d-flex align-items-center">
+                                            <span class="pe-sm-2">From</span>
+                                            <div class="input-group position-relative" id="datepickerStartDate">
+                                                <input id="startDate" type="text" class="form-control" data-provide="datepicker"
+                                                       data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                       data-date-container="#datepickerStartDate">
+                                                <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                            </div> <!-- input-group -->
+                                            <span class="px-sm-2">To</span>
+                                            <div class="input-group position-relative" id="datepickerEndDate">
+                                                <input id="endDate" type="text" class="form-control" data-provide="datepicker"
+                                                       data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                       data-date-container="#datepickerEndDate">
+                                                <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                            </div> <!-- input-group -->
+                                        </div>
+                                        <ul class="date-validate-message pt-1 font-13">
+                                            <li>Start date cannot be later than the end date. End date cannot be earlier than the start date.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Filter -->
+            <!-- Start Table Section-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-start mb-2">
+                        <span class="h5">To check the deposit details list, click the 'Counts' column.</span>
+                    </div>
+                    <input hidden="hidden" id="tablePageInput" type="number" value="">
+                    <div class="table-responsive">
+                        <table id="dailySummaryTable" class="display table table-bordered table-hover table-centered m-0">
+                            <thead>
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                            <tr>
+                                <th colspan="6" class="text-end" style="background-color: rgba(214,214,214,0.5)">Total</th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th style="background-color: rgba(234,234,234,0.5)"></th>
+                                <th colspan="2" style="background-color: rgba(234,234,234,0.5)"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Table Section-->
+        </div>
+        <!-- End Content -->
+        <!-- Modal -->
+        <div th:replace="~{contents/pgManagement/modalDailySummary.html}"></div>
+        <div id="loadingSpinner" style="display: none;">
+            <div class="d-flex justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 bg-white bg-opacity-50" style="z-index: 1050;">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <div th:replace="~{fragments/footer}"></div>
+    <!-- End Footer -->
+</div>

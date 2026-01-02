@@ -1,0 +1,256 @@
+{
+  "data": [
+    {
+      "no": "340",
+      "remitter": "N&P Japan",
+      "payoutCountry": "United Kingdom",
+      "payoutPartner": "Tranglo United Kingdom",
+      "headOffice": {
+        "usdJpy": "154.4",
+        "cost": "0.7705",
+        "margin": "GBP"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7705",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7705",
+        "custMobileCust": "GBP"
+      },
+      "update": "2024-11-11 20:06:48"
+    },
+    {
+      "no": "341",
+      "remitter": "N&P USA",
+      "payoutCountry": "Germany",
+      "payoutPartner": "Tranglo Germany",
+      "headOffice": {
+        "usdJpy": "155.3",
+        "cost": "0.7805",
+        "margin": "USD"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7805",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7805",
+        "custMobileCust": "USD"
+      },
+      "update": "2024-11-12 12:30:22"
+    },
+    {
+      "no": "342",
+      "remitter": "Global Remit",
+      "payoutCountry": "India",
+      "payoutPartner": "Tranglo India",
+      "headOffice": {
+        "usdJpy": "153.0",
+        "cost": "0.7655",
+        "margin": "INR"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7655",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7655",
+        "custMobileCust": "INR"
+      },
+      "update": "2024-11-12 14:10:50"
+    },
+    {
+      "no": "343",
+      "remitter": "Asia Remit",
+      "payoutCountry": "China",
+      "payoutPartner": "Tranglo China",
+      "headOffice": {
+        "usdJpy": "150.0",
+        "cost": "0.7500",
+        "margin": "CNY"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7500",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7500",
+        "custMobileCust": "CNY"
+      },
+      "update": "2024-11-13 09:55:32"
+    },
+    {
+      "no": "344",
+      "remitter": "Quick Remit",
+      "payoutCountry": "Vietnam",
+      "payoutPartner": "Tranglo Vietnam",
+      "headOffice": {
+        "usdJpy": "148.2",
+        "cost": "0.7450",
+        "margin": "VND"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7450",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7450",
+        "custMobileCust": "VND"
+      },
+      "update": "2024-11-14 08:20:45"
+    },
+    {
+      "no": "345",
+      "remitter": "Money Remit",
+      "payoutCountry": "Thailand",
+      "payoutPartner": "Tranglo Thailand",
+      "headOffice": {
+        "usdJpy": "149.3",
+        "cost": "0.7460",
+        "margin": "THB"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7460",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7460",
+        "custMobileCust": "THB"
+      },
+      "update": "2024-11-14 10:40:55"
+    },
+    {
+      "no": "346",
+      "remitter": "N&P Japan",
+      "payoutCountry": "United Kingdom",
+      "payoutPartner": "Tranglo United Kingdom",
+      "headOffice": {
+        "usdJpy": "154.4",
+        "cost": "0.7705",
+        "margin": "GBP"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7705",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7705",
+        "custMobileCust": "GBP"
+      },
+      "update": "2024-11-11 20:06:48"
+    },
+    {
+      "no": "347",
+      "remitter": "N&P USA",
+      "payoutCountry": "Germany",
+      "payoutPartner": "Tranglo Germany",
+      "headOffice": {
+        "usdJpy": "155.3",
+        "cost": "0.7805",
+        "margin": "USD"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7805",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7805",
+        "custMobileCust": "USD"
+      },
+      "update": "2024-11-12 12:30:22"
+    },
+    {
+      "no": "348",
+      "remitter": "Global Remit",
+      "payoutCountry": "India",
+      "payoutPartner": "Tranglo India",
+      "headOffice": {
+        "usdJpy": "153.0",
+        "cost": "0.7655",
+        "margin": "INR"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7655",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7655",
+        "custMobileCust": "INR"
+      },
+      "update": "2024-11-12 14:10:50"
+    },
+    {
+      "no": "349",
+      "remitter": "Asia Remit",
+      "payoutCountry": "China",
+      "payoutPartner": "Tranglo China",
+      "headOffice": {
+        "usdJpy": "150.0",
+        "cost": "0.7500",
+        "margin": "CNY"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7500",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7500",
+        "custMobileCust": "CNY"
+      },
+      "update": "2024-11-13 09:55:32"
+    },
+    {
+      "no": "350",
+      "remitter": "Quick Remit",
+      "payoutCountry": "Vietnam",
+      "payoutPartner": "Tranglo Vietnam",
+      "headOffice": {
+        "usdJpy": "148.2",
+        "cost": "0.7450",
+        "margin": "VND"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7450",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7450",
+        "custMobileCust": "VND"
+      },
+      "update": "2024-11-14 08:20:45"
+    },
+    {
+      "no": "351",
+      "remitter": "Money Remit",
+      "payoutCountry": "Thailand",
+      "payoutPartner": "Tranglo Thailand",
+      "headOffice": {
+        "usdJpy": "149.3",
+        "cost": "0.7460",
+        "margin": "THB"
+      },
+      "agentMargin": {
+        "settle": "0",
+        "margin": "0.7460",
+        "cust": "0"
+      },
+      "customerRate": {
+        "settle": "0.7460",
+        "custMobileCust": "THB"
+      },
+      "update": "2024-11-14 10:40:55"
+    }
+  ]
+}

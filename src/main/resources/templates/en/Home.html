@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+  <title>QSRemit</title>
+  <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+<header>
+  <div class="relative bg-gradient-to-br from-primary to-yellow-600 min-h-screen">
+    <div id="background-slider" class="absolute inset-0 w-full h-full overflow-hidden">
+      <div class="relative w-full h-full">
+        <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-100">
+          <img src="/backgrounds/01.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+        </div>
+        <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+          <img src="/backgrounds/02.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+        </div>
+        <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+          <img src="/backgrounds/03.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+        </div>
+        <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+          <img src="/backgrounds/04.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+        </div>
+      </div>
+    </div>
+    <div class="relative py-6">
+      <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
+           aria-label="Global">
+        <div class="flex items-center flex-1">
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="/en"><span class="sr-only">QS Remit</span><img class="h-10 w-auto sm:h-12"
+                                                                    src="/qs-logo.svg"
+                                                                    alt="QSRemit"/></a>
+            <div class="-mr-2 flex items-center md:hidden">
+              <button
+                      type="button"
+                      class="bg-blue-700 rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:bg-blue-600 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
+                      aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="hidden space-x-10 md:flex md:ml-10">
+            <a class="font-medium text-blue-100 hover:text-white" href="/en/About">About</a><a
+                  class="font-medium text-blue-100 hover:text-white" href="/en/HowToSendMoney">How to
+            send</a>
+            <a class="font-medium text-blue-100 hover:text-white" href="/en/HowToRegister">How to
+              register</a><a class="font-medium text-blue-100 hover:text-white" href="/en/Branches">Branches</a>
+            <a class="font-medium text-blue-100 hover:text-white" href="/en/notice">Notices</a>
+          </div>
+        </div>
+        <div class="hidden md:flex">
+          <div class="mr-1 md:mr-0 text-right z-10">
+            <a
+                    href="/login"
+                    class="inline-flex justify-center items-center px-3 py-2 mr-3 text-sm text-gray-500 md:text-gray-100 bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5 mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+              </svg>
+              Corporate Login
+            </a>
+            <div class="relative inline-block text-left" data-headlessui-state="">
+              <div>
+                <button
+                        id="language-selector"
+                        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 md:text-white bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                        type="button"
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                >
+                  <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/usa.svg"
+                                                                                 class="w-auto h-4 rounded-sm shadow"
+                                                                                 alt="English"/></span>English
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                       aria-hidden="true"
+                       class="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100">
+                    <path fill-rule="evenodd"
+                          d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                          clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+              </div>
+              <div id="language-options"
+                   class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                   role="menu">
+                <div class="px-1 py-1 space-y-1" role="none">
+                  <a href="/kr"
+                     class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                     role="menuitem">
+                    <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/kor.svg"
+                                                                                 class="w-auto h-4 rounded-sm shadow"
+                                                                                 alt="한국어"/></span>한국어
+                    </div>
+                  </a>
+                  <a href="/en"
+                     class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                     role="menuitem">
+                    <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/usa.svg"
+                                                                                 class="w-auto h-4 rounded-sm shadow"
+                                                                                 alt="English"/></span>English
+                    </div>
+                  </a>
+                  <a href="/"
+                     class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                     role="menuitem">
+                    <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/jpn.svg"
+                                                                                 class="w-auto h-4 rounded-sm shadow"
+                                                                                 alt="日本語"/></span>日本語
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50">
+        <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+          <div class="pt-5 pb-6 px-5">
+            <div class="flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="/qs-logo.svg" alt="QSRemit"/>
+              </div>
+              <div class="-mr-2">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="mt-6">
+              <nav class="grid gap-y-4">
+                <a href="/en/About" class="text-base font-medium text-gray-900 hover:text-gray-700">About Us</a>
+                <a href="/en/HowToSendMoney" class="text-base font-medium text-gray-900 hover:text-gray-700">How to Send</a>
+                <a href="/en/HowToRegister" class="text-base font-medium text-gray-900 hover:text-gray-700">How to Register</a>
+                <a href="/en/Branches" class="text-base font-medium text-gray-900 hover:text-gray-700">Branches</a>
+                <a href="/en/notice" class="text-base font-medium text-gray-900 hover:text-gray-700">Notice</a>
+              </nav>
+            </div>
+          </div>
+          <div class="py-6 px-5 space-y-3">
+            <a href="/login" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-yellow-600">
+              Corporate Login
+            </a>
+            <div class="text-center text-sm text-gray-500">
+              <a href="/kr" class="inline-flex items-center hover:text-gray-700 mr-4">
+                <img src="/flags/kor.svg" class="w-4 h-3 mr-1" alt="한국어"/> 한국어
+              </a>
+              <a href="/en" class="inline-flex items-center hover:text-gray-700 mr-4 font-semibold text-primary">
+                <img src="/flags/usa.svg" class="w-4 h-3 mr-1" alt="English"/> English
+              </a>
+              <a href="/" class="inline-flex items-center hover:text-gray-700">
+                <img src="/flags/jpn.svg" class="w-4 h-3 mr-1" alt="日本語"/> 日本語
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-0 my-16 sm:my-24">
+        <div class="mx-auto max-w-7xl">
+          <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+            <div class="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-start">
+              <div>
+                <h1 class="mt-4 text-4xl leading-none font-semibold text-white sm:mt-5">
+                  <span class="text-blue-100 font-normal text-3xl md:block">Easy, affordable &amp; quick</span>
+                  <span class="mt-4 block">Send money, send happiness</span>
+                </h1>
+                <p class="mt-5 text-base text-yellow-50 sm:mt-6 sm:text-xl lg:text-lg xl:text-xl">
+                  Quality of Service, QSRemit is your quick, safe &amp; affordable way of sending
+                  money overseas from Korea.</p>
+                <div class="mt-12 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
+                  <div class="flex flex-wrap items-start">
+                    <div class="flex w-full sm:w-auto">
+                      <a
+                              href="https://apps.apple.com/kr/app/qsremit-for-japan/id6749607211"
+                              target="_blank"
+                              class="flex items-center bg-gradient-to-bl from-primary to-yellow-600 text-white text-lg font-bold tracking-wide px-6 py-3 pl-3 rounded-lg leading-tight hover:bg-blue-700 shadow-lg"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                             class="fill-current w-8 h-8 mr-3">
+                          <path
+                                  d="M14 3.99c-5.511 0-10 4.489-10 10v22c0 5.512 4.489 10 10 10h22c5.511 0 10-4.488 10-10v-22c0-5.511-4.489-10-10-10H14zm0 2h22c4.43 0 8 3.57 8 8v22c0 4.43-3.57 8-8 8H14c-4.43 0-8-3.57-8-8v-22c0-4.43 3.57-8 8-8zm8.572 5.903A2.001 2.001 0 0 0 20.72 14.9l1.811 3.09L16.666 28H12a2 2 0 0 0 0 4h15.412a3.328 3.328 0 0 0-.379-2.355l-.004-.004A4.911 4.911 0 0 0 25.48 28h-4.177l7.676-13.102a2 2 0 0 0-3.452-2.021l-.677 1.156-.678-1.156a1.998 1.998 0 0 0-1.6-.984zm5.739 8.048-.827 1.373a4.99 4.99 0 0 0-.107 4.942l6.297 10.746c.372.636 1.04.988 1.726.988a1.998 1.998 0 0 0 1.723-3.01L35.377 32H38a2 2 0 0 0 0-4h-4.967l-4.722-8.059zM14.625 34.004a4.895 4.895 0 0 0-1.613.232l-.446.758a2 2 0 1 0 3.452 2.022l1.076-1.836a3.334 3.334 0 0 0-2.463-1.176h-.006z"
+                          ></path>
+                        </svg>
+                        <div><span
+                                class="block text-sm font-normal text-yellow-100 leading-tight">Download QSRemit</span>iPhone
+                          App
+                        </div>
+                      </a>
+                    </div>
+                    <div class="flex w-full sm:w-auto pl-0 pt-4 sm:pl-4 sm:pt-0">
+                      <a
+                              href="https://play.google.com/store/apps/details?id=com.qsremit.mobile_jp"
+                              target="_blank"
+                              class="flex items-center bg-gradient-to-bl from-primary to-yellow-600 text-white text-lg font-bold tracking-wide px-6 py-3 pl-3 rounded-lg leading-tight hover:bg-blue-700 shadow-lg"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                             class="fill-current w-8 h-8 mr-3">
+                          <path
+                                  d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.22.9-.57 1.18l-2.29 1.32-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49Z"
+                          ></path>
+                        </svg>
+                        <div><span
+                                class="block text-sm font-normal text-yellow-100 leading-tight">Download QSRemit</span>Android
+                          App
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <a
+                          class="mt-8 text-sm text-blue-50 tracking-wide sm:mt-10 border border-blue-300 inline-block px-5 py-2 rounded-full font-semibold hover:text-white hover:bg-blue-700"
+                          href="/en/TrackTransaction"
+                  >
+                    Track your transaction
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
+              <div class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg">
+                <div class="px-4 pt-8 pb-4 sm:px-8">
+                  <div class="">
+                    <h2 class="text-xl font-semibold tracking-tight text-primary sm:text-2xl">
+                      Rate calculator</h2>
+                    <p class="mt-1 text-md leading-6 text-gray-500">Calculate your remittance
+                      amount based on our current exchange rate.</p>
+                    <div class="mt-6">
+                      <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-x-6">
+                          <div>
+                            <div>
+                              <label for="sending-from"
+                                     class="block text-sm font-medium text-gray-700">Sending
+                                from</label>
+                              <div class="mt-1 relative">
+                                <button class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        id="sending-from"
+                                        type="button" aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        data-headlessui-state="">
+                                                                        <span class="block truncate">
+                                                                            <div class=" flex items-center">
+                                                                                <span class="inline-block mr-2"><img
+                                                                                        src="/flags/kor.svg"
+                                                                                        class="w-auto h-4 rounded-sm shadow"></span>Korea
+                                                                            </div>
+                                                                        </span>
+                                  <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 viewBox="0 0 24 24" fill="currentColor"
+                                                                                 aria-hidden="true"
+                                                                                 class="h-5 w-5 text-gray-400">
+                                                                                <path fill-rule="evenodd"
+                                                                                      d="M11.47 4.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 01-1.06 1.06L12 6.31 8.78 9.53a.75.75 0 01-1.06-1.06l3.75-3.75zm-3.75 9.75a.75.75 0 011.06 0L12 17.69l3.22-3.22a.75.75 0 111.06 1.06l-3.75 3.75a.75.75 0 01-1.06 0l-3.75-3.75a.75.75 0 010-1.06z"
+                                                                                      clip-rule="evenodd"></path>
+                                                                            </svg>
+                                                                        </span>
+                                </button>
+                                <!-- Sending from 드롭다운 리스트 -->
+                                <ul id="sending-from-options"
+                                    class="hidden absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                                    role="listbox">
+                                  <li role="option" data-country="KOR"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/kor.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Korea
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <div>
+                              <label for="receiving-to"
+                                     class="block text-sm font-medium text-gray-700">Receiving
+                                to</label>
+                              <div class="mt-1 relative">
+                                <button class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        id="receiving-to"
+                                        type="button" aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        data-headlessui-state="">
+                                                                        <span class="block truncate">
+                                                                            <div class=" flex items-center">
+                                                                                <span class="inline-block mr-2"><img
+                                                                                        src="/flags/are.svg"
+                                                                                        class="w-auto h-4 rounded-sm shadow"></span>UAE
+                                                                            </div>
+                                                                        </span>
+                                  <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                 viewBox="0 0 24 24" fill="currentColor"
+                                                                                 aria-hidden="true"
+                                                                                 class="h-5 w-5 text-gray-400">
+                                                                                <path fill-rule="evenodd"
+                                                                                      d="M11.47 4.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 01-1.06 1.06L12 6.31 8.78 9.53a.75.75 0 01-1.06-1.06l3.75-3.75zm-3.75 9.75a.75.75 0 011.06 0L12 17.69l3.22-3.22a.75.75 0 111.06 1.06l-3.75 3.75a.75.75 0 01-1.06 0l-3.75-3.75a.75.75 0 010-1.06z"
+                                                                                      clip-rule="evenodd"></path>
+                                                                            </svg>
+                                                                        </span>
+                                </button>
+                                <!-- Receiving to 드롭다운 리스트 -->
+                                <ul id="receiving-to-options"
+                                    class="hidden absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                                    role="listbox">
+                                  <li role="option" data-country="ARE"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/are.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">UAE
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="AUS"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/aus.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Australia
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="BGD"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/bgd.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Bangladesh
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="JPN"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/jpn.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Japan
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="IND"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/ind.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">India
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="NPL"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/npl.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Nepal
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="PHL"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/phl.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Philippines
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="THA"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/tha.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Thailand
+                                    </div>
+                                  </li>
+                                  <li role="option" data-country="VNM"
+                                      class="cursor-pointer hover:bg-blue-50 py-2 pl-3 pr-9 text-gray-900">
+                                    <div class="flex items-center"><img
+                                            src="/flags/vnm.svg"
+                                            class="w-4 h-4 mr-2 rounded-sm shadow"
+                                            alt="">Vietnam
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-x-6">
+                          <div class="flex items-center">
+                            <input id="sending" name="calculationMethod" type="radio"
+                                   class="focus:ring-indigo-500 h-4 w-4 text-blue-600 border-gray-300"
+                                   value="Sending" checked="">
+                            <label for="sending"
+                                   class="ml-3 block text-sm font-medium text-gray-700">Sending
+                              amount</label>
+                          </div>
+                          <div class="flex items-center">
+                            <input id="receiving" name="calculationMethod" type="radio"
+                                   class="focus:ring-indigo-500 h-4 w-4 text-blue-600 border-gray-300"
+                                   value="Receiving">
+                            <label for="receiving"
+                                   class="ml-3 block text-sm font-medium text-gray-700">Receiving
+                              amount</label>
+                          </div>
+                        </div>
+                        <div>
+                          <label for="price"
+                                 class="block text-sm font-medium text-gray-700">Sending
+                            amount</label>
+                          <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                              <span class="text-gray-500 sm:text-sm">KRW</span>
+                            </div>
+                            <input type="text" name="price" id="price"
+                                   class="focus:ring-indigo-500 focus:border-blue-500 block w-full pl-12 pr-4 sm:text-sm border-gray-300 rounded-md"
+                                   placeholder="0" aria-describedby="price-currency"
+                                   value="">
+                          </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-x-6">
+                          <div class="flex items-center">
+                            <input id="bank" name="sendingMethod" type="radio"
+                                   class="focus:ring-indigo-500 h-4 w-4 text-blue-600 border-gray-300"
+                                   value="bank" checked="">
+                            <label for="bank"
+                                   class="ml-3 block text-sm font-medium text-gray-700">Bank
+                              deposit</label>
+                          </div>
+                        </div>
+                        <div id="calculation-result" class="hidden">
+                          <div class="flow-root">
+                            <ul class="-mb-8">
+                              <li>
+                                <div class="relative pb-4">
+                                                                        <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                                                                              aria-hidden="true"></span>
+                                  <div class="relative flex items-start space-x-3">
+                                    <div>
+                                      <div class="relative px-1">
+                                        <div class="h-8 w-8 bg-gray-100 rounded-full ring-4 ring-white flex items-center justify-center">
+                                          <svg class="h-5 w-5 text-gray-400"
+                                               xmlns="http://www.w3.org/2000/svg"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="min-w-0 flex-1 py-1.5">
+                                      <div class="text-base text-gray-600"
+                                           data-step="send">You
+                                        send <span
+                                                class="font-medium text-blue-700">KRW 0</span>
+                                        from Korea
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li data-step="warning-container" class="hidden">
+                                <div class="relative pb-5">
+                                                                        <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                                                                              aria-hidden="true"></span>
+                                  <div class="relative flex items-start space-x-3">
+                                    <div>
+                                      <div class="relative px-1">
+                                        <div class="h-8 w-8 bg-gray-100 rounded-full ring-4 ring-white flex items-center justify-center">
+                                          <svg class="h-4 w-4 text-gray-400"
+                                               xmlns="http://www.w3.org/2000/svg"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="min-w-0 flex-1 py-1.5">
+                                      <div class="text-sm text-gray-400 italic"
+                                           data-step="warning">
+                                        Sending amount is less than minimum
+                                        amount (KRW 5000) allowed per
+                                        transaction.
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li data-step="service-charge-container" class="hidden">
+                                <div class="relative pb-5">
+                                                                        <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                                                                              aria-hidden="true"></span>
+                                  <div class="relative flex items-start space-x-3">
+                                    <div>
+                                      <div class="relative px-1">
+                                        <div class="h-8 w-8 bg-gray-100 rounded-full ring-4 ring-white flex items-center justify-center">
+                                          <svg class="h-4 w-4 text-gray-400"
+                                               xmlns="http://www.w3.org/2000/svg"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="min-w-0 flex-1 py-1.5">
+                                      <div class="text-sm text-gray-600"
+                                           data-step="service-charge">
+                                        KRW 1,500 service charge added
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="relative pb-5">
+                                                                        <span class="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                                                                              aria-hidden="true"></span>
+                                  <div class="relative flex items-start space-x-3">
+                                    <div>
+                                      <div class="relative px-1">
+                                        <div class="h-8 w-8 bg-gray-100 rounded-full ring-4 ring-white flex items-center justify-center">
+                                          <svg class="h-4 w-4 text-gray-400"
+                                               xmlns="http://www.w3.org/2000/svg"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="min-w-0 flex-1 py-1.5">
+                                      <div class="text-sm text-gray-400 italic"
+                                           data-step="rate">
+                                        @ rate of KRW 1 = AED 0.00246553
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="relative pb-12">
+                                  <div class="relative flex items-start space-x-3">
+                                    <div>
+                                      <div class="relative px-1">
+                                        <div class="h-8 w-8 bg-blue-100 rounded-full ring-4 ring-white flex items-center justify-center">
+                                          <svg class="h-4 w-4 text-blue-600"
+                                               xmlns="http://www.w3.org/2000/svg"
+                                               fill="none"
+                                               viewBox="0 0 24 24"
+                                               stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="min-w-0 flex-1 py-1.5">
+                                      <div class="text-base text-gray-600"
+                                           data-step="receive">
+                                        <span class="font-medium text-blue-700">AED 0</span>
+                                        is received at UAE
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="py-10 md:py-20 lg:py-24 xl:py-28 bg-cover bg-bottom bg-gradient-to-br from-blue-400 to-blue-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="">
+        <h2 class="text-base text-gray-100 font-semibold tracking-wide uppercase">Send Money, send
+          happiness</h2>
+        <p class="mt-2 text-3xl leading-8 font-semibold tracking-tight text-white sm:text-4xl">Setting the
+          standard for international remittance service</p>
+        <p class="mt-4 max-w-2xl text-xl text-gray-50">We are the fastest growing international remittance
+          service provider with best rate in the market and no hidden fees.</p>
+      </div>
+      <div class="mt-10">
+        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+          <div class="relative">
+            <dt>
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <p class="ml-16 text-lg leading-6 font-medium text-white">Transfers are instant</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base text-gray-50">Simple remittance request with fast payment.
+              Transfer money easily through your smartphone from anywhere
+            </dd>
+          </div>
+          <div class="relative">
+            <dt>
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+              </div>
+              <p class="ml-16 text-lg leading-6 font-medium text-white">Secure &amp; hassle free</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base text-gray-50">Partnership with the world’s trusted banks and
+              payment providers. Safe system licensed by financial authorities.
+            </dd>
+          </div>
+          <div class="relative">
+            <dt>
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <p class="ml-16 text-lg leading-6 font-medium text-white">Competitive exchange rates</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base text-gray-50">Save up to 90% with lower fees and competitive
+              exchange rate in the market.
+            </dd>
+          </div>
+          <div class="relative">
+            <dt>
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                </svg>
+              </div>
+              <p class="ml-16 text-lg leading-6 font-medium text-white">SMS notifications</p>
+            </dt>
+            <dd class="mt-2 ml-16 text-base text-gray-50">We will inform you in an easy-to-understand
+              manner of the entire process of payment.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="bg-yellow-100">
+    <div class="max-w-7xl mx-auto py-8 md:py-20 px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-lg font-semibold uppercase text-primary tracking-wide">Our partners</p>
+      <div class="mt-6 grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-4">
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-20" src="/payout-partners/himal-remit.png" alt="Himal Remit"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-24" src="/payout-partners/global-remit.svg" alt="Global IME Remit"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-16" src="/payout-partners/tranglo.svg" alt="Tranglo"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-12" src="/payout-partners/sacombank-sbr.png" alt="Sacombank SBR"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-24" src="/payout-partners/panda-remit.png" alt="Panda Remit"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-24" src="/payout-partners/bank-of-punjab.svg" alt="The Bank of Punjab"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-16" src="/payout-partners/brac-bank.svg" alt="Brac Bank"/></div>
+        <div class="col-span-1 flex justify-center items-center md:col-span-2 lg:col-span-1 md:h-32"><img
+                class="h-16" src="/payout-partners/sendmn.svg" alt="Sendmn"/></div>
+      </div>
+    </div>
+  </div>
+  <div class="relative pt-0 md:pt-8 pb-16 overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-yellow-100"></div>
+    <div class="">
+      <div class="relative lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+        <div class="mt-4 lg:mt-0 lg:col-start-1">
+          <div class="px-4 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative">
+            <!-- 환율 리스트  -->
+            <div class="bg-white sm:rounded-lg shadow-lg overflow-hidden">
+              <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                <h3 class="text-lg font-semibold text-primary">Exchange Rates</h3>
+                <p class="mt-1 text-sm text-gray-500">1 KRW to other currencies</p>
+              </div>
+              <div class="overflow-auto max-h-[500px]">
+                <ul id="exchange-rate-list" class="divide-y divide-gray-100">
+                  <!-- Exchange rates will be loaded dynamically -->
+                  <li class="px-4 py-3 text-center text-gray-400">
+                    Loading exchange rates...
+                  </li>
+                </ul>
+              </div>
+              <div class="px-4 py-3 border-t border-gray-200 bg-gray-50">
+                <div class="text-gray-400 text-sm" id="exchange-rate-updated">
+                  Last updated on: Loading...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 max-w-xl mx-auto sm:px-6 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+          <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase mt-8 md:mt-14">EASY
+            ONLINE REGISTRATION</h2>
+          <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary sm:text-4xl">with
+            mobile application</p>
+          <p class="mt-4 text-lg text-gray-500">Start sending money from Japan easily by using our mobile
+            application. With our online member registration service it is fast and simple to become our
+            member.</p>
+          <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase mt-14">EASY
+            VERIFICATION</h2>
+          <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary sm:text-4xl">with
+            online eKYC</p>
+          <p class="mt-4 text-lg text-gray-500">
+            There&#x27;s no need to come to our office or branch in person to become a member and send
+            money to your loved ones. All necessary procedures for becoming our member is now simplified
+            with our state of
+            the art verification system.
+          </p>
+          <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase mt-14">CONVENIENT
+            SERVICE</h2>
+          <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary sm:text-4xl">with
+            tracking and history</p>
+          <p class="mt-4 text-lg text-gray-500">
+            Once you have our mobile app installed and membership verified, it is as simple as tapping a
+            button to check rates, send money and also track your current and previous remittance
+            records in realtime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gradient-to-br from-primary to-yellow-500">
+    <div class="mx-auto text-center py-10 sm:py-16 px-4 md:py-20 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-medium text-white sm:text-4xl"><span
+              class="block">Everything into one QSRemit App</span>
+      </h2>
+      <p class="max-w-2xl mx-auto mt-4 text-lg leading-6 text-yellow-100">Start sending money to your loved
+        ones easily using QSRemit mobile App. Registration, verification and money transfer all under your
+        fingertip.</p>
+      <a
+              href="https://apps.apple.com/kr/app/qsremit-for-japan/id6749607211"
+              target="_blank"
+              class="mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-yellow-50 hover:bg-white sm:w-auto"
+      >
+        Download for iPhone
+      </a>
+      <a
+              href="https://play.google.com/store/apps/details?id=com.qsremit.mobile_jp"
+              target="_blank"
+              class="sm:ml-4 mt-4 sm:mt-8 w-full inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-yellow-50 hover:bg-white sm:w-auto"
+      >
+        Download for Android
+      </a>
+    </div>
+  </div>
+</main>
+<footer class="bg-primary shadow-inner">
+  <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+    <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en">Home</a></div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en/About">About</a>
+      </div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en/HowToSendMoney">How
+        to send money</a></div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en/HowToRegister">How
+        to register</a></div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en/Branches">Our
+        Branches</a></div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en">Notices</a>
+      </div>
+      <div class="px-5 py-2"><a class="text-base text-yellow-100 hover:text-white" href="/en">Contact us</a>
+      </div>
+    </nav>
+    <nav class="-mx-5 my-2 mt-8 flex flex-wrap justify-center text-sm" aria-label="Footer">
+      <div class="px-5 py-2"><a class="text-yellow-100 hover:text-white" href="/en/Terms01">Customer Complaints and Dispute Resolution </a>
+      </div>
+      <div class="px-5 py-2"><a class="text-yellow-100 hover:text-white" href="/en/Terms02">Privacy Policy</a>
+      </div>
+      <div class="px-5 py-2"><a class="text-yellow-100 hover:text-white" href="/en/Terms03">Electronic Financial Transaction Agreement</a>
+      </div>
+      <div class="px-5 py-2"><a class="text-yellow-100 hover:text-white" href="/en/Terms04">Overseas Remittance Service Terms and Conditions</a>
+      </div>
+      <div class="px-5 py-2"><a class="text-yellow-100 hover:text-white" href="/en/Terms05">Open Banking Service Agreement</a>
+      </div>
+    </nav>
+    <nav class="-mx-5 my-2 mt-3 flex flex-wrap justify-center text-sm" aria-label="Footer">
+      <div class="px-3 py-2">
+        <a href="https://www.facebook.com/QS-REMIT-Offical-101234619188092"
+           class="text-yellow-100 hover:text-white">
+          <svg class="w-10 h-10" viewBox="0 0 24 24">
+            <path
+                    fill="currentColor"
+                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+      <div class="px-3 py-2">
+        <a href="https://www.instagram.com/qs_remit/" class="text-yellow-100 hover:text-white">
+          <svg class="w-10 h-10" viewBox="0 0 24 24">
+            <path
+                    fill="currentColor"
+                    d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+    <div class="-mx-5 my-2 mt-4 flex flex-wrap justify-center text-sm">
+      <span class="bg-white inline-block py-2 px-4 rounded-lg"><img src="/mosf-kr.png" class="h-16"/></span>
+    </div>
+    <p class="mt-4 text-center text-base text-yellow-100">© 2025 N&amp;P Korea Co., Ltd. All rights
+      reserved.</p>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+.bg-primary,
+.btn-primary,
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus, 
+.btn-outline-primary:active, 
+.btn-outline-primary.active, 
+.btn-outline-primary.focus, 
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.badge-primary,
+#preloader #status .spinner,
+.pagination li a:hover,
+.pagination .active a,
+.nav-pills .nav-link.active,
+.form-check-input:checked,
+.social-icon li a:hover,
+.back-to-top:hover,
+.back-to-home a,
+#topnav .navbar-toggle.open span:hover,
+.flex-control-paging li a.flex-active,
+.feature:hover .icon,
+.watch-video a .play-icon-circle,
+.tns-nav button.tns-nav-active,
+.work-container.work-modern .icons .work-icon:hover,
+.tagcloud > a:hover,
+.contact-show-btn:before,
+.dashboard-shape-two:before {
+    background-color: #f89d36 !important;
+}
+
+.text-primary,
+.btn-outline-primary,
+.btn-link-primary,
+.badge-outline-primary,
+.dropdown-primary .dropdown-menu .dropdown-item:hover, 
+.dropdown-primary .dropdown-menu .dropdown-item.active, 
+.dropdown-primary .dropdown-menu .dropdown-item:active, 
+.dropdown-primary .dropdown-menu .dropdown-item.focus, 
+.dropdown-primary .dropdown-menu .dropdown-item:focus,
+.alert-outline-primary,
+.page-next-level .page-next li a:hover,
+.accordion .accordion-item .accordion-button:not(.collapsed),
+.accordion .accordion-item .accordion-button:before,
+.tagline .tag-social a:hover,
+.tagline .tag-right a:hover,
+#topnav .has-submenu.active .submenu li.active > a,
+#topnav .navigation-menu > li:hover > a,
+#topnav .navigation-menu > li.active > a,
+#topnav .navigation-menu > li > a:hover, 
+#topnav .navigation-menu > li > a:active,
+#topnav.scroll .navigation-menu > li:hover > a, 
+#topnav.scroll .navigation-menu > li.active > a,
+#topnav .navigation-menu > li .submenu li a:hover,
+#topnav .navigation-menu > li:hover > a,
+#topnav .navigation-menu > li.active > a,
+#topnav .navigation-menu > li > a:hover,
+#topnav .navigation-menu > li .submenu li a:hover,
+#topnav .navigation-menu > li.has-submenu.open > a,
+#topnav .has-submenu.active a,
+#topnav .small-tagline a:hover,
+.feature-transform .title:hover,
+.pricing.price-table:hover .price-content,
+.pricing.price-table:hover .price-feature .table-addon,
+.container-filter li.active,
+.work-container.work-classic .content .title:hover, 
+.work-container.work-grid .content .title:hover, 
+.work-container.work-modern .content .title:hover,
+.work-container.work-grid .content .title:hover,
+.blog-post .blog-img .author-desc .author .name:hover,
+.blog-post .blog-content .title:hover,
+.blog-post .blog-content .post-meta .like:hover,
+.blog-post .blog-content .post-meta .comment:hover,
+.blog-post .blog-content .post-meta .read:hover,
+.blog-post .blog-content .post-meta .tag:hover,
+.sidebar .widget .catagory li a:hover,
+.media-list .comment-desk a:hover,
+.job-catagory .title:hover,
+.explore-feature .title:hover,
+.job-catagory:hover .icon,
+.explore-feature:hover .icon,
+.job-grid .job-title:hover,
+.job-grid .company:hover,
+.footer .footer-list li a:hover {
+    color: #f89d36 !important;
+}
+
+.btn-primary,
+.btn-outline-primary,
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus, 
+.btn-outline-primary:active, 
+.btn-outline-primary.active, 
+.btn-outline-primary.focus, 
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.badge-outline-primary,
+.alert-primary,
+.alert-outline-primary,
+.pagination li a:hover,
+.pagination .active a,
+.form-group .form-control:focus, 
+.form-group .form-control.active,
+.form-check-input:checked,
+.custom-control-input:focus ~ .custom-control-label::before,
+.form-control:focus,
+.social-icon li a:hover,
+#topnav .has-submenu.active.active .menu-arrow,
+#topnav.scroll .navigation-menu > li:hover > .menu-arrow, 
+#topnav.scroll .navigation-menu > li.active > .menu-arrow,
+#topnav.nav-sticky .navigation-menu.nav-light > li:hover > .menu-arrow,
+#topnav .navigation-menu > li:hover > .menu-arrow,
+#topnav .navigation-menu.nav-light > li:hover > .menu-arrow,
+#topnav .navigation-menu.nav-light .has-submenu.active.active .menu-arrow,
+.timeline-inner::before {
+    border-color: #f89d36 !important;
+}
+
+a.text-primary:hover, 
+a.text-primary:focus,
+.btn-link-primary:hover, 
+.btn-link-primary:focus, 
+.btn-link-primary:active, 
+.btn-link-primary.active, 
+.btn-link-primary.focus, 
+.btn-link-primary:not(:disabled):not(.disabled):active {
+    color: #f38508 !important;
+}
+
+.btn-primary,
+.btn-outline-primary:hover, 
+.btn-outline-primary:focus, 
+.btn-outline-primary:active, 
+.btn-outline-primary.active, 
+.btn-outline-primary.focus, 
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+    box-shadow: 0 3px 5px 0 rgba(248, 157, 54, 0.3) !important;
+}
+  
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.btn-primary.focus {
+    background-color: #f38508 !important;
+    border-color: #f38508 !important;
+}
+
+.alert-primary {
+    background-color: #f9a74a !important;
+}
+
+.alert-primary .alert-link {
+    color: #da7708 !important;
+}
+
+.social-icon li a:hover .fea-social {
+    fill: #f7911d !important;
+}
+
+.bg-gradident-overlay,
+.owl-theme .owl-dots .owl-dot span {
+    background-color: rgba(248, 157, 54, 0.6) !important;
+}
+
+.contact-show-btn:before {
+    box-shadow: 0 10px 25px rgba(248, 157, 54, 0.5) !important;
+}
+
+.tns-nav button {
+    background-color: rgba(248, 157, 54, 0.4) !important;
+}
+
+@keyframes beatbtn {
+    0% {
+      background-color: #f89d36 !important;
+    }
+    50% {
+      background-color: rgba(248, 157, 54, 0.8) !important;
+    }
+}

@@ -1,0 +1,104 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- Start Page title -->
+            <div th:replace="~{fragments/title}"></div>
+            <!-- End page title -->
+            <!-- Start Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <form>
+
+                        <div class="d-flex flex-wrap align-items-center justify-content-between">
+
+                            <div class="row col-xl-12 d-flex flex-wrap align-items-center">
+                                <!--Status-->
+                                <label for="statusSelect" class="col-md-2">Status</label>
+                                <div class="col-md-2 me-4">
+                                    <select class="form-select" id="statusSelect">
+                                        <option value="">All</option>
+                                        <option value="PENDING">PENDING</option>
+                                        <option value="PAID">PAID</option>
+                                        <option value="CANCELLED">CANCELLED</option>
+                                    </select>
+                                </div>
+                                <!--Search By-->
+                                <label for="columnSelect" class="col-md-1">Search By</label>
+                                <div class="d-flex col-md-6">
+                                    <select class="form-select" id="columnSelect">
+                                        <option value="bankName">Bank Name</option>
+                                        <option value="accountNo">Account Number</option>
+                                        <option value="receiver">Receiver</option>
+                                        <option value="amount">Amount</option>
+                                        <option value="reference">Reference</option>
+                                        <option value="memo">Memo</option>
+                                    </select>
+                                    <div class="col-7">
+                                        <input class="form-control" type="text" name="searchText" id="searchText">
+                                        <input hidden="hidden" name="bankNameInput" id="bankNameInput">
+                                        <select class="form-select" id="bankNameSelectSearch">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12 d-flex flex-wrap mt-3">
+                                <label for="startDate" class="col-md-2 col-form-label">Period Date</label>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center">
+                                        <span class="pe-sm-2">From</span>
+                                        <div class="input-group position-relative" id="datepickerStartDate">
+                                            <input id="startDate" type="text" class="form-control" data-provide="datepicker"
+                                                   data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                   data-date-container="#datepickerStartDate"
+                                                   pattern="\d{4}-\d{2}-\d{2}"
+                                                   maxlength="10">
+                                            <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                        </div><!-- input-group -->
+                                        <span class="px-sm-2">To</span>
+                                        <div class="input-group position-relative" id="datepickerEndDate">
+                                            <input id="endDate" type="text" class="form-control" data-provide="datepicker"
+                                                   data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                                   data-date-container="#datepickerEndDate"
+                                                   pattern="\d{4}-\d{2}-\d{2}"
+                                                   maxlength="10">
+                                            <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                        </div><!-- input-group -->
+                                    </div>
+                                    <ul class="date-validate-message pt-1 font-13">
+                                        <li>Start date cannot be later than the end date. End date cannot be earlier than the start date.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center mt-sm-1">
+                            <button id="searchBtn" type="button" class="btn btn-dark width-xl">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Filter -->
+            <!-- Start Table Section-->
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-3 d-flex flex-wrap justify-content-end gap-2">
+                        <a href="/pgManagement/newBankDepositManagement" class="btn btn-outline-primary width-xl">New Bank Deposit</a>
+                    </div>
+                    <div class="flex justify-content-end">
+                    </div>
+                    <input hidden="hidden" id="tablePageInput" type="number" value="">
+                    <table id="bankDepositManagementTable" class="display table table-bordered table-hover table-centered m-0">
+                    </table>
+                </div>
+            </div>
+            <!-- End Table Section-->
+        </div>
+        <!-- End Content -->
+    </div>
+    <!-- Footer Start -->
+    <div th:replace="~{fragments/footer}"></div>
+    <!-- End Footer -->
+</div>

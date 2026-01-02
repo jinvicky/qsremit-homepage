@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layout}">
+
+<body>
+<!-- Fragment for content -->
+<div layout:fragment="content" th:replace="~{contents/dashboardAgent}">
+</div>
+
+<!-- Fragment for additional JS -->
+<th:block layout:fragment="add_js">
+  <!-- Dashboard init -->
+  <script src="/js/pages/dashboard-analytics.init.js"></script>
+</th:block>
+</body>
+</html>

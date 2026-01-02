@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="header">
+    <div class="relative bg-gradient-to-br from-primary to-yellow-600">
+        <div id="background-slider" class="absolute inset-0 w-full h-full overflow-hidden">
+            <div class="relative w-full h-full">
+                <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-100">
+                    <img src="/backgrounds/01.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+                </div>
+                <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+                    <img src="/backgrounds/02.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+                </div>
+                <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+                    <img src="/backgrounds/03.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+                </div>
+                <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-0">
+                    <img src="/backgrounds/04.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
+                </div>
+            </div>
+        </div>
+        <div class="relative py-6">
+            <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+                <div class="flex items-center flex-1">
+                    <div class="flex items-center justify-between w-full md:w-auto">
+                        <div class="flex items-start -mr-28">
+                            <a href="/en"><span class="sr-only">QS Remit</span><img class="h-10 w-auto sm:h-12" src="/qs-logo.svg" alt="QSRemit" /></a>
+                            <span class="inline-block text-white text-xs font-bold -mt-3 ml-1">10<sup>th</sup> Anniversary</span>
+                        </div>
+                        <div class="-mr-2 flex items-center md:hidden">
+                            <button
+                                    id="mobile-menu-button"
+                                    type="button"
+                                    class="bg-blue-700 rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:bg-blue-600 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
+                                    aria-expanded="false"
+                            >
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden space-x-10 md:flex md:ml-10">
+                        <a class="font-medium text-yellow-100 hover:text-white" href="/en/About">About</a>
+                        <a class="font-medium text-yellow-100 hover:text-white" href="/en/HowToSendMoney">How to send</a>
+                        <a class="font-medium text-yellow-100 hover:text-white" href="/en/HowToRegister">How to register</a>
+                        <a class="font-medium text-yellow-100 hover:text-white" href="/en/Branches">Branches</a>
+                        <a class="font-medium text-yellow-100 hover:text-white" href="/en/notice">Notices</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex">
+                    <div class="mr-1 md:mr-0 text-right z-10">
+                        <a
+                                href="/login"
+                                class="inline-flex justify-center items-center px-3 py-2 mr-3 text-sm text-gray-500 md:text-gray-100 bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                            </svg>
+                            Corporate Login
+                        </a>
+                        <div class="relative inline-block text-left">
+                            <div>
+                                <button
+                                        id="language-selector"
+                                        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 md:text-white bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                        type="button"
+                                        aria-haspopup="menu"
+                                        aria-expanded="false"
+                                >
+                                    <div class="flex items-center">
+                                        <span class="inline-block mr-2"><img src="/flags/usa.svg" class="w-auto h-4 rounded-sm shadow" alt="English"/></span>English
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100">
+                                        <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div id="language-options" class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu">
+                                <div class="px-1 py-1 space-y-1" role="none">
+                                    <a th:href="@{'/kr' + ${pathWithoutLang}}" class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm" role="menuitem">
+                                        <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/kor.svg" class="w-auto h-4 rounded-sm shadow" alt="한국어"/></span>한국어
+                                        </div>
+                                    </a>
+                                    <a th:href="@{'/en' + ${pathWithoutLang}}" class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm" role="menuitem">
+                                        <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/usa.svg" class="w-auto h-4 rounded-sm shadow" alt="English"/></span>English
+                                        </div>
+                                    </a>
+                                    <a th:href="@{${pathWithoutLang}}" class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm" role="menuitem">
+                                        <div class="flex items-center">
+                                            <span class="inline-block mr-2"><img src="/flags/jpn.svg" class="w-auto h-4 rounded-sm shadow" alt="日本語"/></span>日本語
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50">
+                <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                    <div class="pt-5 pb-6 px-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <a href="/en"><img class="h-8 w-auto" src="/qs-logo.svg" alt="QSRemit"/></a>
+                            </div>
+                            <div class="-mr-2">
+                                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <nav class="grid gap-y-4">
+                                <a href="/en/About" class="text-base font-medium text-gray-900 hover:text-gray-700">About</a>
+                                <a href="/en/HowToSendMoney" class="text-base font-medium text-gray-900 hover:text-gray-700">How to send</a>
+                                <a href="/en/HowToRegister" class="text-base font-medium text-gray-900 hover:text-gray-700">How to register</a>
+                                <a href="/en/Branches" class="text-base font-medium text-gray-900 hover:text-gray-700">Branches</a>
+                                <a href="/en/notice" class="text-base font-medium text-gray-900 hover:text-gray-700">Notices</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="py-6 px-5 space-y-3">
+                        <a href="/login" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary hover:bg-yellow-600">
+                            Corporate Login
+                        </a>
+                        <div class="text-center text-sm text-gray-500">
+                            <a th:href="@{'/kr' + ${currentPath}}"
+                               class="inline-flex items-center hover:text-gray-700 mr-4">
+                                <img src="/flags/kor.svg" class="w-4 h-3 mr-1" alt="한국어"/> 한국어
+                            </a>
+                            <a th:href="@{'/en' + ${currentPath}}"
+                               class="inline-flex items-center hover:text-gray-700 font-semibold text-primary mr-4">
+                                <img src="/flags/usa.svg" class="w-4 h-3 mr-1" alt="English"/> English
+                            </a>
+                            <a th:href="@{${currentPath}}"
+                               class="inline-flex items-center hover:text-gray-700">
+                                <img src="/flags/jpn.svg" class="w-4 h-3 mr-1" alt="日本語"/> 日本語
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</header>
+</html>
+

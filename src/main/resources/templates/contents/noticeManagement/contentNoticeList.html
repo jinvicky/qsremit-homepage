@@ -1,0 +1,56 @@
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <!-- 페이지 타이틀 -->
+            <div th:replace="~{fragments/title}"></div>
+
+            <!-- 공지 카드 리스트 -->
+            <div class="row" th:if="${noticeList != null}">
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3"
+                     th:each="notice : ${noticeList}">
+
+                    <div style="width: 100%; height: 250px; overflow: hidden;">
+
+                        <img class="card-img-top w-100 h-100"
+                             th:if="${notice.thumbnailBase64 != null}"
+                             th:src="${notice.thumbnailBase64}"
+                             alt="thumbnail"
+                             style="object-fit: cover;">
+
+
+                        <img class="card-img-top w-100 h-100"
+                             th:if="${notice.thumbnailBase64 == null}"
+                             th:src="@{/qs-logo.svg}"
+                             alt="default thumbnail"
+                             style="object-fit: cover;">
+                    </div>
+
+                        <!-- 본문 -->
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${notice.title}">공지 제목</h5>
+                        </div>
+
+                        <!-- 하단 영역 -->
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <small class="text-muted"
+                                   th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd')}">
+                                2024-01-01
+                            </small>
+
+                            <a th:href="@{/noticeManagement/noticeView(noticeId=${notice.noticeId})}"
+                               class="btn btn-sm btn-primary">
+                                자세히 보기
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div th:replace="~{fragments/footer}"></div>
+
+        </div>
+    </div>
+</div>

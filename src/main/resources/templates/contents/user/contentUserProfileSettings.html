@@ -1,0 +1,90 @@
+<div class="content-page">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+      <!-- Start Page title -->
+      <div th:replace="~{fragments/title}"></div>
+      <!-- End page title -->
+      <!-- Start Section -->
+      <div class="card">
+        <div class="card-body">
+          <form id="profileSettingsForm" autocomplete="off"  th:object="${form}" method="post" class="form-horizontal" role="form">
+            <div class="mb-2 row">
+              <label class="col-md-2 col-form-label" for="userType">User Type<span class="text-danger">*</span></label>
+              <div class="col-md-6">
+                <input th:field="*{userType}" readOnly type="text" class="form-control border-0 px-0 bg-white">
+              </div>
+            </div>
+            <div class="mb-2 row">
+              <label class="col-md-2 col-form-label" for="userId">User ID<span class="text-danger">*</span></label>
+              <div class="col-md-6">
+                <input th:field="*{userId}" readOnly type="text" class="form-control border-0 px-0 bg-white" >
+              </div>
+            </div>
+            <div class="mb-2 row">
+              <label class="col-md-2 col-form-label" for="password">User Password<span class="text-danger">*</span></label>
+              <div id="viewMoreContent" class="col-md-6 p-2">
+                <label class="table-light" for="newPassword">Password Rules</label>
+                <ul>
+                  <li>At least 14 characters in length.</li>
+                  <li>Contain at least one numeric character.</li>
+                  <li>Contain at least one special character (e.g. !@#$%^&*).</li>
+                  <li>Not contain more than 3 consecutive number. (eg.123)</li>
+                </ul>
+                <div class="show-error-message">
+                  <label class="table-light col-md-4" for="newPassword">New Password</label>
+                  <input type="password"  parsley-trigger="keyup" required
+                         autocomplete="new-password"
+                         data-parsley-minlength="14"
+                         data-parsley-pattern='^(?=.*[!@#$%^&*(),.?:{}|<>])(?=.*\d).*$'
+                         data-parsley-custom
+                         class="form-control" id="newPassword" name="newPassword"
+                         data-parsley-required-message="Password is required."
+                         data-parsley-pattern-message="Password must include at least one number and one special character."
+                         data-parsley-minlength-message="Password must be at least 14 characters long."
+                         data-parsley-custom-message="Password must not contain 3 or more consecutive numbers.">
+                </div>
+                <div class="pt-2 show-error-message">
+                  <label class="table-light" for="confirmNewPassword">Confirm New Password</label>
+                  <input
+                      autocomplete="confirm-password"
+                      data-parsley-equalto="#newPassword"
+                      required  parsley-trigger="keyup"
+                      type="password"
+                      class="form-control"
+                      data-parsley-required-message="Please confirm your password."
+                      data-parsley-equalto-message="Passwords do not match."
+                      id="confirmNewPassword">
+                </div>
+                <div class="pt-2">
+                  <label class="table-light" for="confirmNewPassword">Current Password</label>
+                  <input
+                      required  parsley-trigger="keyup"
+                      autocomplete="current-password"
+                      type="password"
+                      class="form-control"
+                      id="confirmCurrentPassword"
+                      name="currentPassword"
+                      data-parsley-required-message="Password is required.">
+                  <p class="pt-1">Please enter your current password to verify your identity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a href="javascript:history.back()"  type="button" class="btn btn-outline-primary width-xl">Cancel</a>
+              <button id="changePasswordButton" type="submit" class="btn btn-primary" >Change Password</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+      <!-- End Section-->
+    </div>
+    <!-- End Container -->
+  </div>
+  <!-- End Content -->
+  <!-- Footer Start -->
+  <div th:replace="~{fragments/footer}"></div>
+  <!-- End Footer -->
+</div>

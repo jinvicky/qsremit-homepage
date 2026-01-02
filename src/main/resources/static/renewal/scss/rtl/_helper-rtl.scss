@@ -1,0 +1,60 @@
+//
+// helper.scss
+//
+
+.text-left {
+    text-align: right !important;
+}
+
+.text-right {
+    text-align: left !important;
+}
+
+.float-end {
+    float: left !important;
+}
+.float-start {
+    float: right !important;
+}
+dd {
+    margin-right: 0 !important;
+}
+//Switcher
+#style-switcher {
+    .t-rtl-light {
+        display: none;
+    }
+    .t-ltr-light {
+        display: inline-block;
+    }
+}
+
+.process{
+    .icon {
+        width: 60px;
+        height: 60px;
+        line-height: 45px;
+        transition: all 0.5s ease; 
+        &.icon-uil {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: inherit;
+        }
+    }
+    &.process-bar {
+        &:after {
+            display: block;
+            width: 50%;
+            position: absolute;
+            content: ' ';
+            border-width: 0 0 1px 0;
+            border: 1px $gray-300 dashed;
+            top: 20%;
+            left: -31%;
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+    }
+}

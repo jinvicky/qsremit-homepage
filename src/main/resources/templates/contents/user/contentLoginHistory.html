@@ -1,0 +1,108 @@
+<div class="content-page">
+    <div class="content">
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div th:replace="~{fragments/title}"></div>
+            <!-- end page title -->
+            <!-- Start Filter -->
+            <div class="card">
+                <div class="card-body">
+                    <form class>
+                        <div class="d-flex flex-wrap align-items-center mt-sm-3">
+                            <label class="col-md-2 col-form-label" for="allCheck">Event Type</label>
+                            <div class="d-flex flex-wrap col-md-10">
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="loginCheck"
+                                           value="LOGIN">
+                                    <label class="form-check-label" for="loginCheck">LOGIN</label>
+                                </div>
+                                <div class="form-check pe-4">
+                                    <input class="form-check-input searchStatus" type="checkbox" id="logoutCheck"
+                                           value="LOGOUT">
+                                    <label class="form-check-label" for="logoutCheck">LOGOUT</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-sm-3 d-flex flex-wrap align-items-start align-items-center">
+                            <label for="userEventSelect" class="col-md-2">Status</label>
+                            <div class="col-md-4">
+                                <select class="form-select" id="statusSelect" name="userEventSelect">
+                                    <option value="">Select</option>
+                                    <option value="SUCCESS">SUCCESS</option>
+                                    <option value="FAIL">FAIL</option>
+                                    <option value="ERROR">ERROR</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mt-sm-3 d-flex flex-wrap align-items-start">
+                            <label for="startDate" class="col-md-2 col-form-label">Date</label>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <span class="pe-sm-2">From</span>
+                                    <div class="input-group position-relative" id="datepickerStartDate">
+                                        <input id="startDate" type="text" class="form-control" data-provide="datepicker"
+                                               data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                               data-date-container="#datepickerStartDate"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               maxlength="10">
+                                        <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                    </div><!-- input-group -->
+                                    <span class="px-sm-2">To</span>
+                                    <div class="input-group position-relative" id="datepickerEndDate">
+                                        <input id="endDate" type="text" class="form-control" data-provide="datepicker"
+                                               data-date-format="yyyy-mm-dd" data-date-autoclose="true"
+                                               data-date-container="#datepickerEndDate"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               maxlength="10">
+                                        <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                                    </div><!-- input-group -->
+                                </div>
+                                <ul class="date-validate-message col-md-8 ps-2 pt-1">
+                                    <li>Start date cannot be later than the end date.</li>
+                                    <li>End date cannot be earlier than the start date.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="text-center mt-sm-3">
+                            <button id="searchBtn" type="button" class="btn btn-dark width-xl">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Filter -->
+            <!-- Start Table Card -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <input hidden="hidden" id="tablePageInput" type="number" value="">
+                        <table id="LoginHistoryTable"
+                               class="display table table-bordered table-hover table-centered m-0">
+                            <thead>
+                            <tr>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="log : ${logs}">
+                                <td th:text="${log.id}"></td>
+                                <td th:text="${log.userLoginedId}"></td>
+                                <td th:text="${log.userEvent}"></td>
+                                <td th:text="${log.ipAddress == '0:0:0:0:0:0:0:1' ? 'localhost' : log.ipAddress}"></td>
+                                <td th:text="${log.logTime}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- End Table Card -->
+        </div>
+        <!-- content -->
+        <!-- Footer Start -->
+        <div th:replace="~{fragments/footer}"></div>
+        <!-- end Footer -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+</div>

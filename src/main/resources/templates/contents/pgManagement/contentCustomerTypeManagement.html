@@ -1,0 +1,32 @@
+<div class="content-page">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div th:replace="~{fragments/title}"></div>
+      <!-- end page title -->
+      <!-- Start Table Card -->
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="mb-2 d-flex justify-content-between align-items-center">
+              <div class="text-muted small">Click on the yellow-highlighted areas to make changes. Press Enter to save your changes.</div>
+            </div>
+            <input hidden="hidden" id="tablePageInput" type="number" value="">
+            <table id="customerTypeTable"
+                   class="display table table-bordered table-hover table-centered m-0">
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- End Table Card -->
+    </div>
+    <!-- content -->
+    <!-- Footer Start -->
+    <div th:replace="~{fragments/footer}"></div>
+    <!-- end Footer -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page content -->
+  <!-- ============================================================== -->
+</div>

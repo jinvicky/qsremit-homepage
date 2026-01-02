@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/terms-layout}">
+<head>
+    <title>QSRemit - 支店案内</title>
+</head>
+<body>
+<div layout:fragment="terms-content">
+<div class="relative py-16 bg-white overflow-hidden">
+    <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+        <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+            <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none"
+                 viewBox="0 0 404 384">
+                <defs>
+                    <pattern id="74b3fd99-0a6f-4271-bef2-e80eeafdf357" x="0" y="0" width="20" height="20"
+                             patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect width="404" height="384" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)"></rect>
+            </svg>
+            <svg class="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32" width="404"
+                 height="384" fill="none" viewBox="0 0 404 384">
+                <defs>
+                    <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20"
+                             patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect width="404" height="384" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)"></rect>
+            </svg>
+            <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none"
+                 viewBox="0 0 404 384">
+                <defs>
+                    <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20"
+                             patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)"></rect>
+            </svg>
+        </div>
+    </div>
+    <div class="relative px-4 sm:px-6 lg:px-8">
+        <div class="text-lg max-w-prose mx-auto">
+            <h1><span class="mt-2 block text-3xl leading-8 font-bold tracking-tight text-primary sm:text-4xl">Our branches throughout Japan</span>
+            </h1>
+            <div class="py-16">
+                <ul class="divide-y divide-gray-200">
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    1
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">ASOKA SPICE </p>
+                                <p class="text-sm text-gray-500 truncate">Kasumigaseki (Saitama)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒350-1103 埼玉県川越市霞ヶ関 1-3-15 霞ヶ関ビル104</p>
+                                    <p>Saitama-Ken Kawagoe-Shi Kasumigaseki 1-3-15 Kasumigaseki bldg. 104 (350-1103)</p>
+                                    <p>TEL: 0492-32-2771</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    2
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">ASOKA SPICE KAMIFUKUOKA</p>
+                                <p class="text-sm text-gray-500 truncate">Kamifukuoka (Saitama)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒356-0004 埼玉県ふじみ野市上福岡 1-6-27 2F</p>
+                                    <p>Saitama-Ken Fujimino-Dhi Kamifukuoka 1-6-27 Pure bldg. 2F (356-0004)</p>
+                                    <p>TEL: 070-3521-3222</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    3
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">KASTHAMANDAP CURRY HOUSE</p>
+                                <p class="text-sm text-gray-500 truncate">Okinawa</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒901-2125 沖縄県浦添市仲西 1-3-26</p>
+                                    <p>Okinawa-Ken Urasoe-Shi Nakanishi 1-3-26 (901-2125)</p>
+                                    <p>TEL: 098-963-4949</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    4
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">DAJU BHAI MART</p>
+                                <p class="text-sm text-gray-500 truncate">Hakata (Fukuoka)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒812-0044 福岡県福岡市博多区千代 1-29-21 ハイコートA号室</p>
+                                    <p>Fukuoka-Ken Fukuoka-Shi Hakata-Ku Chiyo 1-29-21 High Court A (812-0044)</p>
+                                    <p>TEL: 080-7621-6321 (Narayan)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    5
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">SAHARA ASIAN FOOD</p>
+                                <p class="text-sm text-gray-500 truncate">Funabashi (Chiba)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒273-0003 千葉県船橋市宮本 1-18-8-1F</p>
+                                    <p>Chiba-Ken Funabashi-Shi Miyamoto 1-18-8-1F (273-0003)</p>
+                                    <p>TEL: 047-779-2210</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    6
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">FEWA ASIAN HALAL FOODS AND GOODS</p>
+                                <p class="text-sm text-gray-500 truncate">Tsurumi (Kanagawa)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒230-0001 神奈川県横浜市鶴見区矢向 5-4-21 ハイム平松 101</p>
+                                    <p>Kanagawa-Ken Yokohama-Shi Tsurumi-Ku Yakou 5-4-21 Haimu Hiramatsu 101 (230-0001)</p>
+                                    <p>TEL: 080-3972-4684</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    7
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">KUMAMOTO HALAL</p>
+                                <p class="text-sm text-gray-500 truncate">Kumamoto</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒862-0950 熊本県熊本市中央区水前寺 1-10-1 101</p>
+                                    <p>Kumamoto-Ken Kumamoto-Shi Chou-Ku Suizenji 1-10-1 101 (862-0950)</p>
+                                    <p>TEL: 0962-82-8433</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    8
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">ARAKAWA</p>
+                                <p class="text-sm text-gray-500 truncate">Arakawa (Tokyo)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒116-0002 東京都荒川区荒川 3-60-10 キムチの高麗</p>
+                                    <p>Tokyo-To Arakawa-Ku Arakawa 3-60-10 Kimchi No Koryo (116-0002)</p>
+                                    <p>TEL: 03-3801-0003</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    9
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">TSUKUBA</p>
+                                <p class="text-sm text-gray-500 truncate">Ibaraki</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒305-0034 茨城県つくば市小野崎 1736-2</p>
+                                    <p>Ibaraki-Ken Tsukuba-Shi Onozaki 1736-2 (305-0034)</p>
+                                    <p>TEL: 080-4070-5339</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    10
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">AHN</p>
+                                <p class="text-sm text-gray-500 truncate">Shinjuku (Tokyo)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒160-0021 東京都新宿区歌舞伎町 2-41-12 泉ビル 301号</p>
+                                    <p>Tokyo-To Shinjuku-Ku Kabukicho 2-41-12 Izumi Biru 301 (160-0021)</p>
+                                    <p>TEL: 090-8803-2289</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    11
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">MAI TOAN</p>
+                                <p class="text-sm text-gray-500 truncate">Ichikawa (Chiba)</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒272-0023 千葉県市川市南八幡 4-6-2 高橋ビル 3F</p>
+                                    <p>Chiba-Ken Ichikawa-Shi Minamiyawata 4-6-2 Takahashi Biru 3F (272-0023)</p>
+                                    <p>TEL: 080-4888-1368</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    12
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">NAMASTE MART</p>
+                                <p class="text-sm text-gray-500 truncate">Hiroshima</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒720-0053 広島県福山市大黒町 1番37号</p>
+                                    <p>Hiroshima-Ken Fukuyama-Shi Daikoku-Machi 1-37 (720-0053)</p>
+                                    <p>TEL: 070-2408-5528 (Sumita)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    13
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">DAJU BHAI PASAL (ダズバイ パサル)</p>
+                                <p class="text-sm text-gray-500 truncate">Fukuoka</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒812-0054 福岡県福岡市東区馬出 1-29-12 柴田コーポ103</p>
+                                    <p>Fukuoka-Ken Fukuoka-Shi Higashi-Ku Maidashi 1-29-12 Shibata Kopo 103 (812-0054)</p>
+                                    <p>TEL: 092-409-1358</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    14
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">MAYABI RESTAURANT</p>
+                                <p class="text-sm text-gray-500 truncate">Okinawa</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒900-0016 沖縄県那覇市前島 2-15-6 コーポ前島1F</p>
+                                    <p>Okinawa-Ken Naha-Shi Maejima 2-15-6 kopo mejima 1F (900-0016)</p>
+                                    <p>TEL: 098-988-3743</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    15
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">NIRVANA INDIAN NEPALI RESTAURANT AND BAR</p>
+                                <p class="text-sm text-gray-500 truncate">Okinawa</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒904-2214 沖縄県うるま市安慶名 2-9-24</p>
+                                    <p>Okinawa-Ken Uruma-Shi Agena 2-9-24 (904-2214)</p>
+                                    <p>TEL: 070-9211-7651</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    16
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">ASOKA SPICE</p>
+                                <p class="text-sm text-gray-500 truncate">Higashimatsuyama</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒355-0021 埼玉県東松山市神明町 2-1-7 ハシモト店舗 1F</p>
+                                    <p>Saitama-Ken Higashimatsuyama Shinmeicho 2-1-7 Hashimot Tenpo 1F (355-0021)</p>
+                                    <p>TEL: 0493-81-7355</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
+                        <div class="sm:flex sm:space-x-4">
+                            <div class="sr-only sm:not-sr-only">
+                                <div class="text-primary text-2xl bg-yellow-50 w-12 h-12 inline-flex items-center justify-center rounded-full border border-yellow-200">
+                                    17
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-primary truncate">KURASHIKI MINI MART</p>
+                                <p class="text-sm text-gray-500 truncate">Okayama</p>
+                                <div class="mt-3 text-sm text-gray-600 space-y-1">
+                                    <p>〒710-0826 岡山県倉敷市老松町 5-1-29 1F</p>
+                                    <p>Okayama-ken Kurashiki-Shi Oimatsucho 5-1-29 1F (710-0826)</p>
+                                    <p>TEL: 080-5812-8540</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-white">
+    <div class="w-full py-16 px-4 sm:px-6 lg:px-8 md:mt-16">
+        <div class="flex items-start justify-between gap-20">
+            <div class="max-w-[350px]">
+                <h2 class="text-xl text-gray-800 sm:text-2xl">本店</h2>
+                <div class="mt-3">
+                    <p class="text-lg text-gray-500">
+                        〒169-0073東京都新宿区百人町2-20-2-201<br />
+                        <span class="text-sm">
+                            201-2-20-2 Hyakunin-Cho, Shinjuku-Ku<br />
+                            Tokyo, Japan (169-0073)
+                        </span>
+                    </p>
+                </div>
+                <div class="mt-4">
+                    <div class="flex">
+                        <div class="text-base text-gray-500">
+                            <p class="text-yellow-600">月曜日～金曜日　午前10時～午後7時</p>
+                            <p class="text-blue-600">日曜日、祝日　午前10時～午後6時</p>
+                            <p class="text-red-600">土曜日 定休日</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[380px]">
+                <h2 class="text-xl text-gray-800 sm:text-2xl">カスタマーサポート</h2>
+                <div class="mt-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-3 text-base text-gray-500">
+                            <p>TEL: 03-5937-6321</p>
+                            <p class="mt-1">FAX: 03-5937-6320</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-3 text-base text-gray-500"><p>support@qsremit.net</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

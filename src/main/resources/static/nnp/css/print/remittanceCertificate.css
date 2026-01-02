@@ -1,0 +1,324 @@
+/* ============================================
+   REMITTANCE CERTIFICATE - PRINT STYLESHEET
+   ============================================ */
+.certificate-header {
+    display: none;
+    text-align: center;
+    color: #000;
+    margin-bottom: 10px;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.certificate-header .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.certificate-header .logo {
+    height: 50px;
+    object-fit: contain;
+}
+
+.certificate-header .right {
+    text-align: right;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.certificate-header .right .seal {
+    height: 45px;
+    margin-top: 4px;
+}
+
+.certificate-header .header-title h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 4px 0 0 0;
+}
+
+.certificate-header .header-title h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.certificate-header .header-note {
+    font-size: 11px;
+    margin: 0;
+}
+
+.certificate-footer {
+    display: none;
+    font-size: 12px;
+    color: #000;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #000;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.certificate-footer .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.certificate-footer .footer-text {
+    font-size: 12px;
+}
+
+.certificate-footer .footer-date {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.certificate-footer .footer-office {
+    text-align: left;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.jp {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #666;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+
+@media print {
+
+    /* ------------------------------
+       1. 전역 초기화 및 불필요한 요소 숨김
+       ------------------------------ */
+    * {
+        color: #000 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background: #fff !important;
+        background-color: #fff !important;
+    }
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        height: auto !important;
+        background: #fff !important;
+    }
+
+    thead th,
+    thead td {
+        font-weight: bold !important;
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #333 !important;
+        color: #000 !important;
+    }
+
+    /* 공통적으로 숨겨야 할 UI */
+    .d-print-none,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_length,
+    .dataTables_paginate,
+    .btn,
+    .modal-header,
+    .modal-footer {
+        display: none !important;
+    }
+
+    /* 모달 외부 전체 숨김 */
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* ------------------------------
+       2. 인쇄 영역 (모달 + 내용 표시)
+       ------------------------------ */
+    #certificateHeader {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    .certificate-header {
+        color: #000 !important;
+        display: block !important;
+    }
+
+    .certificate-header * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    .certificate-header img {
+        max-height: 50px !important;
+    }
+
+    #con-close-modal,
+    #con-close-modal *,
+    #certificateTable,
+    #certificateTable *,
+    .sender-info,
+    .sender-info * {
+        visibility: visible !important;
+    }
+
+    #con-close-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #fff !important;
+    }
+
+    .modal-dialog,
+    .modal-content {
+        margin: 0 !important;
+        max-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* ------------------------------
+       3. 본문 카드 및 레이아웃
+       ------------------------------ */
+    #con-close-modal .print-card {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    #con-close-modal .modal-body {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    /* ------------------------------
+       4. DataTable 인쇄 스타일
+       ------------------------------ */
+    #certificateTable {
+        border-collapse: collapse !important;
+        width: 100% !important;
+        font-size: 12px !important;
+    }
+
+    #certificateTable th,
+    #certificateTable td {
+        border: 1px solid #000 !important;
+        padding: 4px 6px !important;
+        text-align: center !important;
+        vertical-align: middle !important;
+    }
+
+    /* 정렬 아이콘 제거 */
+    table.dataTable thead .sorting,
+    table.dataTable thead .sorting_asc,
+    table.dataTable thead .sorting_desc {
+        background-image: none !important;
+    }
+
+    /* 복제된 thead 제거 (DataTables internal copy) */
+    div.dataTables_scrollHead,
+    table.dataTable thead tr:nth-of-type(2),
+    table.dataTable thead tr.dt-hasChild,
+    .dataTables_scrollHeadInner {
+        display: none !important;
+    }
+
+    /* 선택된 행만 출력 */
+    #certificateTable tbody tr {
+        display: none !important;
+    }
+    #certificateTable tbody tr.selected {
+        display: table-row !important;
+    }
+
+    /* 체크박스 컬럼 숨김 */
+    #certificateTable th:first-child,
+    #certificateTable td:first-child {
+        display: none !important;
+    }
+
+    /* 표가 페이지에 잘 맞게 정렬 */
+    #con-close-modal table {
+        page-break-inside: avoid !important;
+    }
+
+    /* layout row 숨기기 */
+    #certificateTable_wrapper > .dt-layout-row:first-child,
+    #certificateTable_wrapper > .dt-layout-row:last-child {
+        display: none !important;
+    }
+
+    /* 셀렉트박스를 텍스트처럼 보이게 */
+    select.form-select,
+    select.form-select-sm,
+    .purpose-select,
+    .relation-select {
+        border: none !important;
+        background: none !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        font-size: inherit !important;
+        color: #000 !important;
+
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        line-height: 1.2em !important;
+        height: auto !important;
+    }
+
+    /* 드롭다운 화살표 제거 */
+    select::-ms-expand {
+        display: none !important;
+    }
+
+    /* 프린트 시 강제 outline 제거 */
+    select:focus {
+        outline: none !important;
+    }
+
+
+    #certificateFooter {
+        display: block !important;
+        visibility: visible !important;
+        margin-top: 12px !important;
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    #certificateFooter * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    /* ------------------------------
+       5. 페이지 설정 (A4 세로)
+       ------------------------------ */
+    @page {
+        size: A4 portrait;
+        margin: 0 !important;
+    }
+}

@@ -1,0 +1,65 @@
+<div class="content-page">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+      <!-- Start Page title -->
+      <div th:replace="~{fragments/title}"></div>
+      <!-- End page title -->
+      <!-- Start Filter -->
+      <div class="card">
+        <div class="card-body">
+          <span id="dateTitle" class="h3 mb-lg-1">Month</span>
+          <form>
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+              <div class="col-xl-12 d-flex flex-wrap mt-3">
+                <label for="searchMonth" class="col-md-2 col-form-label">Deposit Month</label>
+                <input type="hidden" id="searchMonthInput" value="">
+                <div class="col-md-2">
+                  <div class="d-flex align-items-center">
+                    <div class="input-group position-relative" id="datepickerSearchMonth">
+                      <input id="searchMonth" type="text" class="form-control" data-provide="datepicker"
+                             data-date-format="yyyy-mm" data-date-autoclose="true"
+                             data-date-min-view-mode="months"
+                             data-date-container="#datepickerSearchMonth"
+                             pattern="\d{4}-\d{2}"
+                             maxlength="7">
+                      <span class="input-group-text"><i class="ri-calendar-event-fill"></i></span>
+                    </div> <!-- input-group -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Filter -->
+      <!-- Start Table Section-->
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table id="pgReportTable" class="display table table-bordered table-hover table-centered m-0">
+              <thead id="pgReportTableHeader">
+                <tr>
+                  <th class="text-center">Receipt Number</th>
+                  <th class="text-center">Customer Type</th>
+                  <th class="text-center">Email</th>
+                  <th class="text-center">Total Settlement Amount</th>
+                  <th class="text-center">Validation / Send Mail</th>
+                </tr>
+              </thead>
+              <tbody id="pgReportTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- End Table Section-->
+    </div>
+    <!-- End Content -->
+    <!-- Modal -->
+    <div th:replace="~{contents/pgManagement/modalPGReportPrint.html}"></div>
+  </div>
+  <!-- Footer Start -->
+  <div th:replace="~{fragments/footer}"></div>
+  <!-- End Footer -->
+</div>

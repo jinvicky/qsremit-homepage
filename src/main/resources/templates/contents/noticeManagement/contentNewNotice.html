@@ -1,0 +1,107 @@
+<div class="content-page">
+  <div class="content">
+    <!-- Start Content-->
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div th:replace="~{fragments/title}"></div>
+      <!-- end page title -->
+      <div class="card">
+        <div class="card-body">
+          <form method="post"
+                class="form-horizontal"
+                data-parsley-validate="data-parsley-validate"
+                role="form">
+            <!-- 첫 번째 줄: Title, Priority -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="title" class="form-label">Title <span class="text-danger">*</span></label>
+                <input
+                        parsley-trigger="change" required
+                        type="text"
+                        class="form-control"
+                        id="title"
+                        name="title"
+                        placeholder="1-50 characters only"
+                        maxlength="50" />
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Thumbnail Image</label>
+                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" accept="image/*" />
+
+                  <small class="form-text text-muted">
+                    권장 크기: 가로 4:3 비율, 800×600px 이상, 3MB 이하 (JPG/PNG).
+                    다른 크기의 이미지도 등록 가능하며, 화면에 맞게 자동으로 잘려서 표시됩니다.
+                  </small>
+
+                </div>
+              </div>
+<!--              <div class="col-md-6">-->
+<!--                <label for="prioritySelect" class="form-label">Priority <span class="text-danger">*</span></label>-->
+<!--                <input type="hidden" id="priorityInput" name="priorityInput" />-->
+<!--                <select class="form-select" id="prioritySelect" parsley-trigger="change" required>-->
+<!--                  <option value="">Select</option>-->
+<!--                  <option value="HIGH">High</option>-->
+<!--                  <option value="MEDIUM">Medium</option>-->
+<!--                  <option value="LOW">Low</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--            </div>-->
+
+            <!-- 두 번째 줄: Category, Type -->
+<!--            <div class="row mb-3">-->
+<!--              <div class="col-md-6">-->
+<!--                <label for="categorySelect" class="form-label">Category <span class="text-danger">*</span></label>-->
+<!--                <input type="hidden" id="categoryInput" name="categoryInput" />-->
+<!--                <select class="form-select" id="categorySelect" parsley-trigger="change" required>-->
+<!--                  <option value="">Select</option>-->
+<!--                  <option value="DASHBOARD">Dashboard</option>-->
+<!--                  <option value="FX_RATE">FX Rate Management</option>-->
+<!--                  <option value="SERVICE_CHARGE">Service Charge Management</option>-->
+<!--                  <option value="CUSTOMER">Customer Management</option>-->
+<!--                  <option value="TRANSACTION">Transaction Management</option>-->
+<!--                  <option value="USER">User Management</option>-->
+<!--                  <option value="SETTLEMENT">Settlement Report</option>-->
+<!--                  <option value="STR">STR Management</option>-->
+<!--                  <option value="BANK_DEPOSIT">Bank Deposit History</option>-->
+<!--                  <option value="AML">AML Management</option>-->
+<!--                  <option value="SYSTEM">System Management</option>-->
+<!--                  <option value="PG">PG Management</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--              <div class="col-md-6">-->
+<!--                <label for="typeSelect" class="form-label">Type <span class="text-danger">*</span></label>-->
+<!--                <input type="hidden" id="typeInput" name="typeInput" />-->
+<!--                <select class="form-select" id="typeSelect" parsley-trigger="change" required>-->
+<!--                  <option value="">Select</option>-->
+<!--                  <option value="BUG">Bug</option>-->
+<!--                  <option value="IMPROVE">Improve</option>-->
+<!--                  <option value="NEW_FEATURE">New Feature</option>-->
+<!--                  <option value="SUPPORT">Support</option>-->
+<!--                  <option value="SECURITY">Security</option>-->
+<!--                  <option value="DELETE">Delete</option>-->
+<!--                  <option value="OTHERS">Others</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--            </div>-->
+            <div class="col-md-12">
+              <h4 class="header-title">Notice Description</h4>
+              <div id="snow-editor" style="height: 450px;"></div>
+              <input type="text" style="display: none" name="hiddenContent" id="hiddenContent" required parsley-trigger="change">
+              <input type="text" style="display: none" name="hiddenImageData" id="hiddenImageData" required parsley-trigger="change">
+            </div>
+            <div class="text-center pt-2">
+              <a href="/noticeManagement/noticeManagement" class="btn btn-outline-primary width-xl">Cancel</a>
+              <button type="submit" class="btn btn-primary width-xl">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Content End -->
+    <!-- Footer Start -->
+    <div th:replace="~{fragments/footer}"></div>
+    <!-- Footer End -->
+  </div>
+</div>
