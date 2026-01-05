@@ -353,6 +353,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     </span>
                 </li>
             `).join('');
+
+            const loadingIndicator = document.getElementById('exchange-rate-loading');
+            if (loadingIndicator) {
+                loadingIndicator.classList.add('hidden');
+            }
         }
 
         // 업데이트 시간 포맷팅

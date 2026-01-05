@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width"/>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
     <title>QSRemit</title>
-    <link rel="stylesheet" href="/css/styles.css"/>
-    <!-- Bootstrap -->
+    <!--    기존 CSS    -->
+    <link href="/css/styles.css" rel="stylesheet"/>
+
+    <!--    신규 CSS    -->
     <link href="/renewal/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <!-- Icons -->
+    <!--    ICON  -->
     <link href="/renewal/css/materialdesignicons.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
-    <!-- Slider -->
-    <link rel="stylesheet" href="/renewal/css/tiny-slider.css"/>
-    <!-- Main Css -->
-    <!-- Custom Css -->
     <link href="/renewal/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt"/>
     <link href="/renewal/css/colors/default.css" rel="stylesheet" id="color-opt">
 </head>
 <body>
 <header>
-    <div class="relative bg-gradient-to-br from-primary to-yellow-600 min-h-screen">
-        <div id="background-slider" class="absolute inset-0 w-full h-full overflow-hidden">
+    <div class="relative bg-dark min-h-screen">
+        <div id="background-slider" class="absolute inset-0 w-full h-full overflow-hidden opacity-50">
             <div class="relative w-full h-full">
                 <div class="absolute w-full top-0 left-0 right-0 bottom-0 transition-opacity duration-1000 opacity-100 bg-blue">
                     <img src="/backgrounds/01.jpg" class="object-cover h-full w-full" alt="QS Remit"/>
@@ -714,18 +711,19 @@
                 <div class="mt-4 lg:mt-0 lg:col-start-1">
                     <div class="px-4 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative">
                         <!-- 환율 리스트  -->
-                        <div class="bg-white sm:rounded-lg shadow-lg overflow-hidden">
-                            <div class="px-4 py-5 sm:px-6 border-b border-gray-200">
+                        <div class="bg-white sm:rounded-lg shadow-lg max-h-[680px] overflow-hidden">
+                            <div class="p-4 sm:px-6 border-b border-gray-200">
                                 <h3 class="text-lg font-semibold text-primary">환율</h3>
-                                <p class="mt-1 text-sm text-gray-500">1 KRW 기준 환율</p>
+                                <div class="text-sm text-gray-500">1 KRW 기준 환율</div>
                             </div>
-                            <div class="overflow-auto max-h-[500px]">
+                            <div class="overflow-y-auto"  style="height: 450px;">
                                 <ul id="exchange-rate-list" class="divide-y divide-gray-100">
-                                    <!-- Exchange rates will be loaded dynamically -->
-                                    <li class="px-4 py-3 text-center text-gray-400">
-                                        환율 정보를 불러오는 중...
-                                    </li>
                                 </ul>
+                                <div class="h-full flex items-center justify-center text-gray-400" id="exchange-rate-loading">
+                                    <div>
+                                        환율 정보를 불러오는 중...
+                                    </div>
+                                </div>
                             </div>
                             <div class="px-4 py-3 border-t border-gray-200 bg-gray-50">
                                 <div class="text-gray-400 text-sm" id="exchange-rate-updated">
