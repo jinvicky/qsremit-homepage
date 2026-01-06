@@ -3185,6 +3185,11 @@ input[type="range"]:focus {
     color: rgb(239 97 39 / var(--tw-text-opacity)) !important;
 }
 
+.text-primary-orange {
+    color: #ef6127 !important;
+}
+
+
 .\!text-success-700 {
     --tw-text-opacity: 1 !important;
     color: rgb(14 117 55 / var(--tw-text-opacity)) !important;
