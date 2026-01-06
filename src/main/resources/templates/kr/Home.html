@@ -36,108 +36,114 @@
             </div>
         </div>
         <div class="relative">
-            <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 bg-primary-orange py-4" aria-label="Global">
-                <div class="flex items-center flex-1">
-                    <div class="flex items-center justify-between w-full md:w-auto">
-                        <a href="/kr"><span class="sr-only">QS Remit</span><img class="h-10 w-auto sm:h-12"
-                                                                                src="/qs-logo-white.svg" alt="QSRemit"/></a>
-                        <div class="-mr-2 flex items-center md:hidden">
-                            <button
-                                    type="button"
-                                    id="mobile-menu-button"
-                                    class="bg-blue-700 rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:bg-blue-600 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
-                                    aria-expanded="false"
-                            >
-                                <span class="sr-only">Open main menu</span>
-                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="hidden space-x-10 md:flex md:ml-10">
-                        <a class="font-medium text-blue-100 hover:text-white" href="/kr/About">회사 소개</a>
-                        <a class="font-medium text-blue-100 hover:text-white" href="/kr/HowToSendMoney">송금 방법</a>
-                        <a class="font-medium text-blue-100 hover:text-white" href="/kr/HowToRegister">등록방법</a>
-                        <a class="font-medium text-blue-100 hover:text-white" href="/kr/Branches">지점안내</a>
-                        <a class="font-medium text-blue-100 hover:text-white" href="/kr/notice">공지사항</a>
-                    </div>
-                </div>
-                <div class="hidden md:flex">
-                    <div class="mr-1 md:mr-0 text-right z-10">
-                        <a
-                                href="/login"
-                                class="inline-flex justify-center items-center px-3 py-2 mr-3 text-sm text-gray-500 md:text-gray-100 bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" aria-hidden="true" class="w-5 h-5 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
-                            </svg>
-                            법인 로그인
-                        </a>
-                        <div class="relative inline-block text-left">
-                            <div>
+            <div class="bg-primary-orange w-full">
+                <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 bg-primary-orange py-4"
+                     aria-label="Global">
+                    <div class="flex items-center flex-1">
+                        <div class="flex items-center justify-between w-full md:w-auto">
+                            <a href="/kr"><span class="sr-only">QS Remit</span><img class="h-10 w-auto sm:h-12"
+                                                                                    src="/qs-logo-white.svg"
+                                                                                    alt="QSRemit"/></a>
+                            <div class="-mr-2 flex items-center md:hidden">
                                 <button
-                                        id="language-selector"
-                                        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 md:text-white bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                                         type="button"
-                                        aria-haspopup="menu"
+                                        id="mobile-menu-button"
+                                        class="bg-primary-orange rounded-md p-2 inline-flex items-center justify-center text-gray-100 hover:bg-blue-600 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
                                         aria-expanded="false"
                                 >
-                                    <div class="flex items-center">
-                                        <span class="inline-block mr-2"><img src="/flags/kor.svg"
-                                                                             class="w-auto h-4 rounded-sm shadow"
-                                                                             alt="한국어"/></span>한국어
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                         aria-hidden="true"
-                                         class="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100">
-                                        <path fill-rule="evenodd"
-                                              d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                                              clip-rule="evenodd"></path>
+                                    <span class="sr-only">Open main menu</span>
+                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M4 6h16M4 12h16M4 18h16"></path>
                                     </svg>
                                 </button>
                             </div>
-                            <div id="language-options"
-                                 class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                                 role="menu">
-                                <div class="px-1 py-1 space-y-1" role="none">
-                                    <a href="/kr"
-                                       class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                                       role="menuitem">
+                        </div>
+                        <div class="hidden space-x-10 md:flex md:ml-10">
+                            <a class="font-medium text-blue-100 hover:text-white" href="/kr/About">회사 소개</a>
+                            <a class="font-medium text-blue-100 hover:text-white" href="/kr/HowToSendMoney">송금 방법</a>
+                            <a class="font-medium text-blue-100 hover:text-white" href="/kr/HowToRegister">등록방법</a>
+                            <a class="font-medium text-blue-100 hover:text-white" href="/kr/Branches">지점안내</a>
+                            <a class="font-medium text-blue-100 hover:text-white" href="/kr/notice">공지사항</a>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex">
+                        <div class="mr-1 md:mr-0 text-right z-10">
+                            <a
+                                    href="/login"
+                                    class="inline-flex justify-center items-center px-3 py-2 mr-3 text-sm text-gray-500 md:text-gray-100 bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                     stroke-width="1.5"
+                                     stroke="currentColor" aria-hidden="true" class="w-5 h-5 mr-2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                                </svg>
+                                법인 로그인
+                            </a>
+                            <div class="relative inline-block text-left">
+                                <div>
+                                    <button
+                                            id="language-selector"
+                                            class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 md:text-white bg-black rounded-md bg-opacity-10 hover:bg-opacity-20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                            type="button"
+                                            aria-haspopup="menu"
+                                            aria-expanded="false"
+                                    >
                                         <div class="flex items-center">
+                                        <span class="inline-block mr-2"><img src="/flags/kor.svg"
+                                                                             class="w-auto h-4 rounded-sm shadow"
+                                                                             alt="한국어"/></span>한국어
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                             aria-hidden="true"
+                                             class="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100">
+                                            <path fill-rule="evenodd"
+                                                  d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                                                  clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div id="language-options"
+                                     class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                     role="menu">
+                                    <div class="px-1 py-1 space-y-1" role="none">
+                                        <a href="/kr"
+                                           class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                                           role="menuitem">
+                                            <div class="flex items-center">
                                             <span class="inline-block mr-2"><img src="/flags/kor.svg"
                                                                                  class="w-auto h-4 rounded-sm shadow"
                                                                                  alt="한국어"/></span>한국어
-                                        </div>
-                                    </a>
-                                    <a href="/en"
-                                       class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                                       role="menuitem">
-                                        <div class="flex items-center">
+                                            </div>
+                                        </a>
+                                        <a href="/en"
+                                           class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                                           role="menuitem">
+                                            <div class="flex items-center">
                                             <span class="inline-block mr-2"><img src="/flags/usa.svg"
                                                                                  class="w-auto h-4 rounded-sm shadow"
                                                                                  alt="English"/></span>English
-                                        </div>
-                                    </a>
-                                    <a href="/"
-                                       class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
-                                       role="menuitem">
-                                        <div class="flex items-center">
+                                            </div>
+                                        </a>
+                                        <a href="/"
+                                           class="text-gray-700 hover:bg-blue-100 group flex rounded-md items-center w-full px-2 py-2 text-sm"
+                                           role="menuitem">
+                                            <div class="flex items-center">
                                             <span class="inline-block mr-2"><img src="/flags/jpn.svg"
                                                                                  class="w-auto h-4 rounded-sm shadow"
                                                                                  alt="日本語"/></span>日本語
-                                        </div>
-                                    </a>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
             <!-- Mobile menu -->
             <div id="mobile-menu"
                  class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-50">
@@ -621,7 +627,8 @@
                 <div class="row max-w-4xl m-auto">
                     <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
                         <div class="feature feature-transition text-center p-4 shadow rounded">
-                            <svg class="h-20 w-20 m-auto text-primary-orange" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="h-20 w-20 m-auto text-primary-orange" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
                                  viewBox="0 0 24 24"
                                  stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -666,7 +673,8 @@
 
                     <div class="col-lg-6 col-md-6 col-12 mt-4 pt-2">
                         <div class="feature feature-transition text-center p-4 shadow rounded h-full">
-                            <svg class="h-20 w-20 m-auto text-primary-orange" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            <svg class="h-20 w-20 m-auto text-primary-orange" xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
@@ -704,7 +712,7 @@
             </div>
         </div>
     </div>
-    <div class="relative pt-0 md:pt-8 pb-16 overflow-hidden"  style="background-color: #FFF5E6;">
+    <div class="relative pt-0 md:pt-8 pb-16 overflow-hidden" style="background-color: #FFF5E6;">
         <div aria-hidden="true" class="absolute inset-x-0 top-0 h-48"></div>
         <div class="">
             <div class="relative lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24 mt-14 align-items-center">
@@ -716,10 +724,11 @@
                                 <h3 class="text-lg font-semibold text-dark">환율</h3>
                                 <div class="text-sm text-gray-500">1 KRW 기준 환율</div>
                             </div>
-                            <div class="overflow-y-auto"  style="height: 500px;">
+                            <div class="overflow-y-auto" style="height: 500px;">
                                 <ul id="exchange-rate-list" class="divide-y divide-gray-100">
                                 </ul>
-                                <div class="h-full flex items-center justify-center text-gray-400" id="exchange-rate-loading">
+                                <div class="h-full flex items-center justify-center text-gray-400"
+                                     id="exchange-rate-loading">
                                     <div>
                                         환율 정보를 불러오는 중...
                                     </div>
@@ -741,12 +750,14 @@
                     <p class="mt-4 text-lg text-gray-500">QSREMIT의 모바일 어플리케이션으로, 한국에서 간단하게 송금을 할 수 있습니다. QSREMIT의
                         온라인회원등록을 사용하면 빠르고 간단하게 회원등록을 할 수 있습니다.</p>
                     <h2 class="text-base text-gray-800 font-semibold tracking-wide uppercase mt-14">온라인 실명확인으로</h2>
-                    <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary-orange sm:text-4xl">손쉽게 인증</p>
+                    <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary-orange sm:text-4xl">손쉽게
+                        인증</p>
                     <p class="mt-4 text-lg text-gray-500">
                         회원가입 또는 송금을 위해 사무실이나 지점을 직접 방문할 필요가 없습니다. 회원가입에 필요한 모든 절차는 이제 최첨단 인증 시스템으로 간소화되었습니다.
                     </p>
                     <h2 class="text-base text-gray-800 font-semibold tracking-wide uppercase mt-14">편리한</h2>
-                    <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary-orange sm:text-4xl">서비스</p>
+                    <p class="mt-1 text-3xl leading-8 font-semibold tracking-tight text-primary-orange sm:text-4xl">
+                        서비스</p>
                     <p class="mt-4 text-lg text-gray-500">
                         모바일 어플리케이션을 설치하고 실명확인이 끝나면 버튼을 탭하여 환율 확인과 송금을 할 수 있으며 현재 및 이전 송금 기록을 실시간으로 추적할 수 있습니다.
                     </p>
@@ -764,10 +775,13 @@
                 <div class="col-lg-6 col-md-6 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <div class="section-title">
                         <h4 class="title mb-4">모든 것을 하나의 <br> QSRemit 모바일앱으로</h4>
-                        <p class="text-muted para-desc mb-0">QSRemit 모바일 앱을 사용하여 사랑하는 사람에게 간편하게 송금을 시작하세요. 등록, 확인 및 송금신청이 모두 귀하의 손끝에서 이루어집니다.</p>
+                        <p class="text-muted para-desc mb-0">QSRemit 모바일 앱을 사용하여 사랑하는 사람에게 간편하게 송금을 시작하세요. 등록, 확인 및
+                            송금신청이 모두 귀하의 손끝에서 이루어집니다.</p>
                         <div class="mt-4 mb-5">
-                            <a href="https://apps.apple.com/kr/app/qsremit-for-japan/id6749607211" class="btn btn-lg btn-dark mt-2 me-2"><i class="mdi mdi-apple"></i> App Store</a>
-                            <a href="https://play.google.com/store/apps/details?id=com.qsremit.mobile_jp" class="btn btn-lg btn-dark mt-2"><i class="mdi mdi-google-play"></i> Play Store</a>
+                            <a href="https://apps.apple.com/kr/app/qsremit-for-japan/id6749607211"
+                               class="btn btn-lg btn-dark mt-2 me-2"><i class="mdi mdi-apple"></i> App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.qsremit.mobile_jp"
+                               class="btn btn-lg btn-dark mt-2"><i class="mdi mdi-google-play"></i> Play Store</a>
                         </div>
                     </div>
                 </div><!--end col-->
